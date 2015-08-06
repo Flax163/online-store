@@ -1,22 +1,32 @@
 package org.vago.onlinestore.model;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+@XmlRootElement
 public class Offer
 {
     private BigInteger id;
     private String name;
-    private BigDecimal price;
     private String description;
+    private BigDecimal price;
     private int stars;
 
+    public Offer(BigInteger id, String name, String description, BigDecimal price, int stars)
+    {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.stars = stars;
+    }
 
+    public Offer()
+    {
+    }
 
-    /*public BigInteger getId()
+    public BigInteger getId()
     {
         return id;
     }
@@ -24,7 +34,7 @@ public class Offer
     public void setId(BigInteger id)
     {
         this.id = id;
-    }*/
+    }
 
     public String getName()
     {
@@ -36,7 +46,7 @@ public class Offer
         this.name = name;
     }
 
-    /*public BigDecimal getPrice()
+    public BigDecimal getPrice()
     {
         return price;
     }
@@ -44,7 +54,7 @@ public class Offer
     public void setPrice(BigDecimal price)
     {
         this.price = price;
-    }*/
+    }
 
     public String getDescription()
     {
