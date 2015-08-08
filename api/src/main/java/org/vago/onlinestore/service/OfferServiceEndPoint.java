@@ -2,6 +2,7 @@ package org.vago.onlinestore.service;
 
 import org.vago.onlinestore.model.Offer;
 
+import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;

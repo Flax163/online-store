@@ -11,13 +11,17 @@
         <relativePath>parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>kernel</artifactId>
+    <artifactId>online-store</artifactId>
     <packaging>pom</packaging>
 
     <name>Online Store</name>
 
     <modules>
         <module>parent</module>
+        <module>api</module>
+        <module>local-server</module>
+        <module>impl</module>
         <module>web</module>
+        <module>application</module>
     </modules>
 </project>

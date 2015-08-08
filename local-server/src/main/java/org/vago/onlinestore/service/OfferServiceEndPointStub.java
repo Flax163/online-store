@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OfferServiceEndPointImpl implements OfferServiceEndPoint
+public class OfferServiceEndPointStub implements OfferServiceEndPoint
 {
     @Override
     public Offer getOffersByCategory(BigInteger idCategory)
