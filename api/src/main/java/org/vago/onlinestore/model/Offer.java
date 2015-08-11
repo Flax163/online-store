@@ -1,11 +1,12 @@
 package org.vago.onlinestore.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @XmlRootElement
-public class Offer
+public class Offer implements Serializable
 {
     private BigInteger id;
     private String name;
