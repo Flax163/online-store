@@ -1,6 +1,6 @@
 package org.vago.onlinestore.config;
 
-import org.vago.onlinestore.service.OfferServiceEndPointImpl;
+import org.vago.onlinestore.endpoint.OfferServiceEndPointRestJson;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -13,7 +13,7 @@ public class ApplicationConfig extends Application
     public Set<Class<?>> getClasses()
     {
         Set<Class<?>> resources = new HashSet<Class<?>>();
-        resources.add(OfferServiceEndPointImpl.class);
+        resources.add(OfferServiceEndPointRestJson.class);
         return resources;
     }
 }

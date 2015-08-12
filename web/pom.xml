@@ -6,9 +6,9 @@
 
     <parent>
         <groupId>org.vago.onlinestore</groupId>
-        <artifactId>kernel</artifactId>
+        <artifactId>parent</artifactId>
         <version>next</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>web</artifactId>
@@ -30,12 +30,6 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>local</artifactId>
             <version>${project.version}</version>
         </dependency>
 

@@ -1,6 +1,5 @@
 package org.vago.onlinestore.service;
 
-import org.vago.onlinestore.bean.OfferServiceBean;
 import org.vago.onlinestore.model.Offer;
 
 import javax.ejb.Stateless;
@@ -11,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-@Default
 public class OfferServiceBeanImpl implements OfferServiceBean
 {
     @Override

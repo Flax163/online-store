@@ -1,4 +1,4 @@
-package org.vago.onlinestore.bean;
+package org.vago.onlinestore.service;
 
 import org.vago.onlinestore.model.Offer;
 

@@ -1,0 +1,13 @@
+.left_menu
+{
+    width: 500px;
+    height: 500px;
+    color: #02fffc;
+}
+
+.header
+{
+    width: 100%;
+    height: 100px;
+    background: green;
+}

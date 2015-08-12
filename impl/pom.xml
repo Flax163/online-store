@@ -6,9 +6,9 @@
 
     <parent>
         <groupId>org.vago.onlinestore</groupId>
-        <artifactId>kernel</artifactId>
+        <artifactId>parent</artifactId>
         <version>next</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>impl</artifactId>

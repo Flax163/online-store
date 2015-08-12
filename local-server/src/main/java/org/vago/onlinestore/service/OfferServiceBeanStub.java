@@ -1,6 +1,5 @@
 package org.vago.onlinestore.service;
 
-import org.vago.onlinestore.bean.OfferServiceBean;
 import org.vago.onlinestore.model.Offer;
 
 import javax.ejb.Stateless;
@@ -11,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
-@Default
 public class OfferServiceBeanStub implements OfferServiceBean
 {
     @Override
@@ -29,6 +27,6 @@ public class OfferServiceBeanStub implements OfferServiceBean
     @Override
     public Offer getServiceById(BigInteger id)
     {
-        return new Offer(BigInteger.ONE,"name", "description", BigDecimal.ONE, 5);
+        return new Offer(BigInteger.ONE, "test", "test", BigDecimal.ONE, 5);
     }
 }

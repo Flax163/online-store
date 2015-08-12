@@ -16,10 +16,6 @@
 
     <name>Online Store Application</name>
 
-    <properties>
-        <test-version>local</test-version>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -42,18 +38,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>Production</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <test-version>impl</test-version>
-            </properties>
-        </profile>
-    </profiles>
 
     <dependencies>
         <dependency>
