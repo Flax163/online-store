@@ -1,6 +1,10 @@
 body
 {
     margin:0 !important;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 header
@@ -18,5 +22,37 @@ header
 
 .navigation_and_content
 {
-    display: table;
+}
+
+.content
+{
+    display: inline-block;
+}
+
+.main_navigation_menu
+{
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main_navigation_menu .element_item
+{
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    color: #0088CC;
+    text-decoration: none;
+    border: 1px solid #E5E5E5;
+}
+
+.main_navigation_-menu span:hover
+{
+    background: #F5F5F5;
+}
+
+.main_navigation_-menu > li
+{
+
 }
