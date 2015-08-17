@@ -12,6 +12,11 @@ header
 
 }
 
+footer
+{
+
+}
+
 .main_layout
 {
     margin-left: auto;
@@ -20,21 +25,29 @@ header
     width: 100%;
 }
 
-.navigation_and_content
-{
-}
-
 .content
 {
     display: inline-block;
 }
 
+.main_menu_position
+{
+    float: left;
+}
+
+.content_position
+{
+    margin-left: 230px;
+}
+
 .main_navigation_menu
 {
-    width: 180px;
+    width: 220px;
     margin: 0;
     padding: 0;
     list-style: none;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
 }
 
 .main_navigation_menu .element_item
@@ -44,15 +57,24 @@ header
     padding: 8px 14px;
     color: #0088CC;
     text-decoration: none;
-    border: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
 }
 
-.main_navigation_-menu span:hover
+.main_navigation_menu .element_item div:hover
 {
     background: #F5F5F5;
 }
 
-.main_navigation_-menu > li
+.thumbnails
 {
+    display: inline-block;
+    border: solid #c9c9c9 1px;
+    border-radius: 5px;
+    margin: 5px;
+}
 
+.thumbnails .offer_thumbnails
+{
+    width: 300px;
+    height: 250px;
 }
