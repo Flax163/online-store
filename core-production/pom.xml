@@ -11,14 +11,29 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>impl</artifactId>
+    <artifactId>core-production</artifactId>
+    <packaging>ejb</packaging>
 
-    <name>Online Store Impl</name>
+    <name>Online Store Core Production</name>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ejb-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <ejbVersion>3.0</ejbVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>core-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

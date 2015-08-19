@@ -10,12 +10,13 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>local</artifactId>
+    <artifactId>core-in-memory</artifactId>
     <packaging>ejb</packaging>
 
-    <name>Online Store Local</name>
+    <name>Online Store Core In Memory EJB</name>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -31,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>core-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

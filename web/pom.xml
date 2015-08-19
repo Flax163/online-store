@@ -17,6 +17,7 @@
     <name>Online Store Web</name>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -29,7 +30,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>core-api</artifactId>
             <version>${project.version}</version>
         </dependency>
 

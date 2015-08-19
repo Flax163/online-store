@@ -11,9 +11,9 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>api</artifactId>
+    <artifactId>core-api</artifactId>
 
-    <name>Online Store Api</name>
+    <name>Online Store Core Api</name>
 
     <dependencies>
         <dependency>
@@ -26,5 +26,9 @@
             <artifactId>jsr311-api</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
 
 </project>

@@ -4,6 +4,7 @@ import org.vago.onlinestore.model.Offer;
 import org.vago.onlinestore.service.OfferServiceBean;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -15,7 +16,7 @@ import java.util.List;
 @Path("/offers")
 public class OfferServiceEndPointRestJson implements OfferServiceEndPoint
 {
-    @EJB
+    @Inject
     OfferServiceBean offerServiceBean;
 
     @Override
