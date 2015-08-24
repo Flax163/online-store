@@ -21,6 +21,7 @@ public class OfferServiceEndPointRestJson implements OfferServiceEndPoint
 
     @Override
     @GET
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Offer getOffersByCategory(@PathParam("id") BigInteger idCategory)
     {
@@ -28,7 +29,7 @@ public class OfferServiceEndPointRestJson implements OfferServiceEndPoint
     }
 
     @Override
-    @Path("/{id}")
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Offer> getOffers()
     {

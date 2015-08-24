@@ -13,7 +13,7 @@
     <artifactId>core-in-memory</artifactId>
     <packaging>ejb</packaging>
 
-    <name>Online Store Core In Memory EJB</name>
+    <name>Online Store Core In Memory</name>
 
     <build>
         <finalName>${project.artifactId}</finalName>
