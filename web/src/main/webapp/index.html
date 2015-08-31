@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="onlineStore">
     <head lang="en">
         <meta charset="UTF-8">
         <title>Online Store</title>
-
-        <script src="lib/angular.js"></script>
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-resource.min.js"></script>
+        <script src="js/core.js"></script>
         <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
     </head>
-
     <body>
         <header>
             <div class="navbar navbar-inverse">
@@ -20,7 +20,7 @@
                             <ul class="nav navbar-nav">
                                 <li>
                                     <a href="#">
-                                        ololo
+                                       ololo
                                     </a>
                                 </li>
                                 <li>
@@ -46,14 +46,14 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="thumbnails">
+                <div class="col-md-9" ng-controller="offerController">
+                    <div class="thumbnails" ng-repeat="offer in offers">
                         <div class="col-md-4 thumbnail">
-                            <h3 class="caption">Offer 1</h3>
+                            <h3 class="caption">{{offer.name}}</h3>
                                 <a href="#">
                                     <img src="http://placehold.it/300x200" alt="">
                                 </a>
-                                <p>Описание</p>
+                                <p>Описание: {{offer.description}}</p>
                             <button type="button" class="btn btn-default btn-lg">
                                 <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Добавить в корзину
                             </button>

@@ -1,12 +1,9 @@
 package org.vago.onlinestore.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-@XmlRootElement
-public class Offer implements Serializable
+public class Offer
 {
     private BigInteger id;
     private String name;
@@ -18,8 +15,8 @@ public class Offer implements Serializable
     {
         this.id = id;
         this.name = name;
-        this.price = price;
         this.description = description;
+        this.price = price;
         this.stars = stars;
     }
 

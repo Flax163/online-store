@@ -1,20 +1,14 @@
-var offerService = angular.module('offerService', ['ngResource']);
+var onlineStore = angular.module('onlineStore', ['ngResource']);
 
-offerService.factory('Offer', ['$resource',
-    function($resource){
+onlineStore.factory('offerFactory', ['$resource', function($resource){
         return $resource('offers', {}, {
-            query: {method:'GET', isArray:true}
+            get: {method:'GET', isArray:true}
         });
     }]);
 
-var phonecatControllers = angular.module('phonecatControllers', []);
-
-phonecatControllers.controller('OffersListCtrl', ['$scope', '$routeParams', 'Offer'], function($scope, $routeParams, Phone) {
-    $scope.offers = Offer.get(function(offer) {
-        $scope.offers = offers.images[0];
-    }));
-
-function OffersListCtrl($scope, Offer)
+onlineStore.controller('offerController', function($scope, offerFactory)
 {
-
-}
+    offerFactory.get(function(data) {
+        $scope.offers = data;
+    });
+});
