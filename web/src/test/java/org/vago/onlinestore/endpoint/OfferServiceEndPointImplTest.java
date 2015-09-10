@@ -10,7 +10,7 @@ import org.vago.onlinestore.dto.OfferViewModel;
 import org.vago.onlinestore.model.Offer;
 import org.vago.onlinestore.service.OfferServiceBean;
 
-import java.math.BigDecimal;
+import javax.json.JsonObjectBuilder;
 import java.math.BigInteger;
 
 import static org.mockito.Mockito.mock;
