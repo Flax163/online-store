@@ -8,9 +8,8 @@ import org.vago.onlinestore.convert.OfferViewModelConverter;
 import org.vago.onlinestore.convert.ViewModelConverter;
 import org.vago.onlinestore.dto.OfferViewModel;
 import org.vago.onlinestore.model.Offer;
-import org.vago.onlinestore.service.OfferServiceBean;
+import org.vago.onlinestore.service.LoadingOfferService;
 
-import javax.json.JsonObjectBuilder;
 import java.math.BigInteger;
 
 import static org.mockito.Mockito.mock;
@@ -20,15 +19,15 @@ import static org.vago.onlinestore.utils.CreatorModel.*;
 public class OfferServiceEndPointImplTest
 {
     OfferServiceEndPoint offerServiceEndPoint;
-    OfferServiceBean offerServiceBean;
+    LoadingOfferService loadingOfferService;
     ViewModelConverter<OfferViewModel, Offer> offerViewModelConverter;
 
     @Before
     public void setup()
     {
-        offerServiceBean = mock(OfferServiceBean.class);
+        loadingOfferService = mock(LoadingOfferService.class);
         offerViewModelConverter = new OfferViewModelConverter();
-        offerServiceEndPoint = new OfferServiceEndPointImpl(offerServiceBean, offerViewModelConverter);
+        offerServiceEndPoint = new OfferServiceEndPointImpl(loadingOfferService, offerViewModelConverter);
 
     }
 
@@ -67,16 +66,16 @@ public class OfferServiceEndPointImplTest
                 .add(createOffer(3l, "name3", "description3", 250.0, 4))
                 .add(createOffer(4l, "name4", "description4", 350.0, 5))
                 .build();
-        when(offerServiceBean.getServices()).thenReturn(offers);
+        when(loadingOfferService.getServices()).thenReturn(offers);
     }
 
     private void mockGetOfferById()
     {
-        when(offerServiceBean.getServiceById(BigInteger.ONE))
+        when(loadingOfferService.getServiceById(BigInteger.ONE))
                 .thenReturn(createOffer(1l, "name1", "description1", 50.0, 3));
-        when(offerServiceBean.getServiceById(BigInteger.valueOf(2l)))
+        when(loadingOfferService.getServiceById(BigInteger.valueOf(2l)))
                 .thenReturn(createOffer(2l, "name2", "description2", 150.0, 4));
-        when(offerServiceBean.getServiceById(BigInteger.valueOf(3l)))
+        when(loadingOfferService.getServiceById(BigInteger.valueOf(3l)))
                 .thenReturn(createOffer(3l, "name3", "description3", 250.0, 4));
     }
 }

@@ -1,23 +1,34 @@
 package org.vago.onlinestore.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class Offer
+@Entity
+@Table(name = "OFFERS")
+public class Offer implements Serializable
 {
+    @Id
+    @GeneratedValue
+    @Column(name = "OFFER_ID")
     private BigInteger id;
-    private String name;
-    private String description;
-    private BigDecimal price;
-    private int stars;
 
-    public Offer(BigInteger id, String name, String description, BigDecimal price, int stars)
+    @Column(name = "OFFER_NAME", length = 100)
+    private String name;
+
+    @Column(name = "OFFER_DESCRIPTION", length = 100)
+    private String description;
+
+    private BigDecimal price;
+    private CategoryOffer categoryOffer;
+
+    public Offer(BigInteger id, String name, String description, BigDecimal price)
     {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.stars = stars;
     }
 
     public Offer()
@@ -64,19 +75,13 @@ public class Offer
         this.description = description;
     }
 
-    public int getStars()
+    public CategoryOffer getCategoryOffer()
     {
-        return stars;
+        return categoryOffer;
     }
 
-    public void setStars(int stars)
+    public void setCategoryOffer(CategoryOffer categoryOffer)
     {
-        this.stars = stars;
-    }
-
-    //TODO: change enum
-    private enum OfferStar
-    {
-        ONE, TWO, THREE, FOUR, FIVE
+        this.categoryOffer = categoryOffer;
     }
 }

@@ -23,7 +23,17 @@ onlineStore.factory('offerFactory', ['$resource', function($resource){
 
 onlineStore.controller('offerController', function($scope, offerFactory)
 {
-    offerFactory.get(function(data) {
-        $scope.offers = data;
-    });
+   /* offerFactory.get(function(data) {
+        //$scope.offers = data;
+    });*/
+    $scope.offers =
+        [{"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0},
+            {"id":null,"name":"test","description":"test","price":null,"stars":0}];
 });

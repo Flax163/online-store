@@ -1,7 +1,11 @@
 package org.vago.onlinestore.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.math.BigInteger;
 
+@Entity
+@Table(name = "ORDER_OFFER")
 public class OrderOffer
 {
     private BigInteger id;

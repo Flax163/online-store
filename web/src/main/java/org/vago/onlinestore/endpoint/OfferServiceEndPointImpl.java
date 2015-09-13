@@ -6,7 +6,7 @@ import org.vago.onlinestore.convert.ViewModelConverter;
 import org.vago.onlinestore.convert.anotation.OfferConverter;
 import org.vago.onlinestore.dto.OfferViewModel;
 import org.vago.onlinestore.model.Offer;
-import org.vago.onlinestore.service.OfferServiceBean;
+import org.vago.onlinestore.service.LoadingOfferService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -19,7 +19,7 @@ import java.util.List;
 @Path("offers")
 public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 {
-    OfferServiceBean offerServiceBean;
+    LoadingOfferService loadingOfferService;
     ViewModelConverter<OfferViewModel, Offer> offerViewModelConverter;
 
     public OfferServiceEndPointImpl()
@@ -27,9 +27,9 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
     }
 
     @Inject
-    public OfferServiceEndPointImpl(OfferServiceBean offerServiceBean, @OfferConverter ViewModelConverter<OfferViewModel, Offer> viewModelConverter)
+    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, @OfferConverter ViewModelConverter<OfferViewModel, Offer> viewModelConverter)
     {
-        this.offerServiceBean = offerServiceBean;
+        this.loadingOfferService = loadingOfferService;
         this.offerViewModelConverter = viewModelConverter;
     }
 
@@ -42,7 +42,7 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
         String result = "";
         try
         {
-            result = new ObjectMapper().writeValueAsString(offerServiceBean.getServiceById(idCategory));
+            result = new ObjectMapper().writeValueAsString(loadingOfferService.getServiceById(idCategory));
         }
         catch (JsonProcessingException e)
         {
@@ -60,7 +60,7 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
         try
         {
             List<OfferViewModel> offerViewModels = new ArrayList<OfferViewModel>();
-            List<Offer> offers = offerServiceBean.getServices();
+            List<Offer> offers = loadingOfferService.getServices();
             for (Offer offer : offers)
             {
                 offerViewModels.add(offerViewModelConverter.convert(offer));

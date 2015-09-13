@@ -8,6 +8,7 @@
         <script src="lib/angular-route.min.js"></script>
         <script src="offers_table/offers_table.js"></script>
         <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         <header>
@@ -48,7 +49,24 @@
                     </div>
                 </div>
                 <div class="col-md-9" ng-controller="offerController">
-                    <div ng-view></div>
+                    <div ng-repeat="offer in offers">
+                        <div class="col-lg-6">
+                            <div class="thumbnail">
+                                <h3 class="caption text-center">{{offer.name}}</h3>
+                                <div>
+                                    <a href="#">
+                                        <img src="http://placehold.it/300x200" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p>Описание: {{offer.description}}</p>
+                                    <button type="button" class="btn btn-success btn-block">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span> Добавить в корзину
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
