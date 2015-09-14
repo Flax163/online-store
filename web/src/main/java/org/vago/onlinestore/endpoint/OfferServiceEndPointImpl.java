@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.vago.onlinestore.convert.ViewModelConverter;
 import org.vago.onlinestore.convert.anotation.OfferConverter;
-import org.vago.onlinestore.dto.OfferViewModel;
+import org.vago.onlinestore.dto.OfferVO;
 import org.vago.onlinestore.model.Offer;
 import org.vago.onlinestore.service.LoadingOfferService;
 
@@ -20,14 +20,14 @@ import java.util.List;
 public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 {
     LoadingOfferService loadingOfferService;
-    ViewModelConverter<OfferViewModel, Offer> offerViewModelConverter;
+    ViewModelConverter<OfferVO, Offer> offerViewModelConverter;
 
     public OfferServiceEndPointImpl()
     {
     }
 
     @Inject
-    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, @OfferConverter ViewModelConverter<OfferViewModel, Offer> viewModelConverter)
+    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, @OfferConverter ViewModelConverter<OfferVO, Offer> viewModelConverter)
     {
         this.loadingOfferService = loadingOfferService;
         this.offerViewModelConverter = viewModelConverter;
@@ -59,13 +59,13 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
         String result = "";
         try
         {
-            List<OfferViewModel> offerViewModels = new ArrayList<OfferViewModel>();
+            List<OfferVO> offerVOs = new ArrayList<OfferVO>();
             List<Offer> offers = loadingOfferService.getServices();
             for (Offer offer : offers)
             {
-                offerViewModels.add(offerViewModelConverter.convert(offer));
+                offerVOs.add(offerViewModelConverter.convert(offer));
             }
-            result = new ObjectMapper().writeValueAsString(offerViewModels);
+            result = new ObjectMapper().writeValueAsString(offerVOs);
         }
         catch(JsonProcessingException e)
         {

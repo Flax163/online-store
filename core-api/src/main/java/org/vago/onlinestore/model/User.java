@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "USERS", schema = "ONLINE_STORE")
 public class User implements Serializable
 {
     @Id
@@ -25,11 +25,6 @@ public class User implements Serializable
     public BigInteger getId()
     {
         return id;
-    }
-
-    public void setId(BigInteger id)
-    {
-        this.id = id;
     }
 
     public String getLogin()

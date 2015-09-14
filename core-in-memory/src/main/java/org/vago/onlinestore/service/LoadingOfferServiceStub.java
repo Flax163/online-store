@@ -26,6 +26,6 @@ public class LoadingOfferServiceStub implements LoadingOfferService
     @Override
     public Offer getServiceById(BigInteger id)
     {
-        return new Offer(BigInteger.ONE, "test", "test", BigDecimal.ONE, 5);
+        return new Offer(BigInteger.ONE, "test", "test", BigDecimal.ONE);
     }
 }

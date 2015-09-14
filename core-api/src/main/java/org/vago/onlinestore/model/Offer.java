@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "OFFERS")
+@Table(name = "OFFERS", schema = "ONLINE_STORE")
 public class Offer implements Serializable
 {
     @Id
@@ -14,13 +14,17 @@ public class Offer implements Serializable
     @Column(name = "OFFER_ID")
     private BigInteger id;
 
-    @Column(name = "OFFER_NAME", length = 100)
+    @Column(name = "OFFER_NAME", length = 100, nullable = false)
     private String name;
 
     @Column(name = "OFFER_DESCRIPTION", length = 100)
     private String description;
 
+    @Column(name = "OFFER_PRICE")
     private BigDecimal price;
+
+    @ManyToOne
+    @JoinColumn(name = "CATEGORIES_OFFER_ID")
     private CategoryOffer categoryOffer;
 
     public Offer(BigInteger id, String name, String description, BigDecimal price)
@@ -40,10 +44,6 @@ public class Offer implements Serializable
         return id;
     }
 
-    public void setId(BigInteger id)
-    {
-        this.id = id;
-    }
 
     public String getName()
     {

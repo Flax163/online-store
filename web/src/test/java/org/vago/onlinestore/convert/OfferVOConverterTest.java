@@ -3,15 +3,15 @@ package org.vago.onlinestore.convert;
 import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.vago.onlinestore.dto.OfferViewModel;
+import org.vago.onlinestore.dto.OfferVO;
 import org.vago.onlinestore.model.Offer;
 
 import static org.vago.onlinestore.utils.CreatorModel.createOffer;
 import static org.vago.onlinestore.utils.CreatorModel.createOfferViewModel;
 
-public class OfferViewModelConverterTest
+public class OfferVOConverterTest
 {
-    ViewModelConverter<OfferViewModel, Offer> offerViewModelConverter;
+    ViewModelConverter<OfferVO, Offer> offerViewModelConverter;
 
     @Before
     public void setUp()
@@ -22,9 +22,9 @@ public class OfferViewModelConverterTest
     @Test
     public void convert()
     {
-        OfferViewModel expected = createOfferViewModel(1l, "name1", "description1", 50.0, 5);
-        Offer offer = createOffer(1l, "name1", "description1", 50.0, 5);
-        OfferViewModel result = offerViewModelConverter.convert(offer);
+        OfferVO expected = createOfferViewModel(1l, "name1", "description1", 50.0);
+        Offer offer = createOffer(1l, "name1", "description1", 50.0);
+        OfferVO result = offerViewModelConverter.convert(offer);
 
         Assert.assertEquals(expected, result);
     }

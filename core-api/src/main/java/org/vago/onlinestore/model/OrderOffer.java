@@ -1,25 +1,28 @@
 package org.vago.onlinestore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "ORDER_OFFER")
-public class OrderOffer
+@Table(name = "ORDERS_OFFER", schema = "ONLINE_STORE")
+public class OrderOffer implements Serializable
 {
+    @Id
+    @GeneratedValue
+    @Column(name = "ORDER_OFFER_ID")
     private BigInteger id;
+
+    @ManyToOne
+    @JoinColumn(name = "OFFER_ID")
     private Offer offer;
+
+    @Column(name = "OFFER_COUNT", nullable = false)
     private int count;
 
     public BigInteger getId()
     {
         return id;
-    }
-
-    public void setId(BigInteger id)
-    {
-        this.id = id;
     }
 
     public Offer getOffer()

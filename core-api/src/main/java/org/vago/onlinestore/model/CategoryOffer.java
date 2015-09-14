@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 @Entity
-@Table(name = "CATEGORIES_OFFER")
+@Table(name = "CATEGORIES_OFFER", schema = "ONLINE_STORE")
 public class CategoryOffer implements Serializable
 {
     @Id
@@ -17,18 +17,12 @@ public class CategoryOffer implements Serializable
     @Column(name = "CATEGORIES_OFFER_NAME", length = 100, nullable = false)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "")
+    @OneToMany(mappedBy = "categoryOffer")
     private List<Offer> offers;
 
     public BigInteger getId()
     {
         return id;
-    }
-
-    public void setId(BigInteger id)
-    {
-        this.id = id;
     }
 
     public String getName()

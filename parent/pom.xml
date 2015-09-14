@@ -16,6 +16,8 @@
         <jax-rs-311-version>1.1.1</jax-rs-311-version>
         <core-implementation>in-memory</core-implementation>
         <json-processing-version>1.0</json-processing-version>
+        <mysql-connector-version>5.1.31</mysql-connector-version>
+        <eclipse-link-version>2.5.1</eclipse-link-version>
     </properties>
 
     <profiles>
@@ -48,6 +50,16 @@
                 <groupId>javax.json</groupId>
                 <artifactId>javax.json-api</artifactId>
                 <version>${json-processing-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa</artifactId>
+                <version>${eclipse-link-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

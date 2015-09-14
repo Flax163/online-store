@@ -5,24 +5,22 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @XmlRootElement
-public class OfferViewModel
+public class OfferVO
 {
     private BigInteger id;
     private String name;
     private String description;
     private BigDecimal price;
-    private int stars;
 
-    public OfferViewModel(BigInteger id, String name, String description, BigDecimal price, int stars)
+    public OfferVO(BigInteger id, String name, String description, BigDecimal price)
     {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
-        this.stars = stars;
     }
 
-    public OfferViewModel()
+    public OfferVO()
     {
     }
 
@@ -66,27 +64,15 @@ public class OfferViewModel
         this.description = description;
     }
 
-    public int getStars()
-    {
-        return stars;
-    }
-
-    public void setStars(int stars)
-    {
-        this.stars = stars;
-    }
-
-
     //TODO: Override equals and hashCode
     @Override
     public boolean equals(Object o)
     {
         if (this == o) return true;
-        if (!(o instanceof OfferViewModel)) return false;
+        if (!(o instanceof OfferVO)) return false;
 
-        OfferViewModel that = (OfferViewModel) o;
+        OfferVO that = (OfferVO) o;
 
-        if (stars != that.stars) return false;
         if (description != null ? !description.equals(that.description) : that.description != null) return false;
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
@@ -102,7 +88,6 @@ public class OfferViewModel
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
-        result = 31 * result + stars;
         return result;
     }
 }
