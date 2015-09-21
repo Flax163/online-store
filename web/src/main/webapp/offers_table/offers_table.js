@@ -16,17 +16,17 @@ onlineStore.config(['$routeProvider',
 ]);
 
 onlineStore.factory('offerFactory', ['$resource', function($resource){
-        return $resource('offers', {}, {
+        return $resource('online-store/offers', {}, {
             get: {method:'GET', isArray:true}
         });
     }]);
 
 onlineStore.controller('offerController', function($scope, offerFactory)
 {
-   /* offerFactory.get(function(data) {
-        //$scope.offers = data;
-    });*/
-    $scope.offers =
+    offerFactory.get(function(data) {
+        $scope.offers = data;
+    });
+    /*$scope.offers =
         [{"id":null,"name":"test","description":"test","price":null,"stars":0},
             {"id":null,"name":"test","description":"test","price":null,"stars":0},
             {"id":null,"name":"test","description":"test","price":null,"stars":0},
@@ -35,5 +35,5 @@ onlineStore.controller('offerController', function($scope, offerFactory)
             {"id":null,"name":"test","description":"test","price":null,"stars":0},
             {"id":null,"name":"test","description":"test","price":null,"stars":0},
             {"id":null,"name":"test","description":"test","price":null,"stars":0},
-            {"id":null,"name":"test","description":"test","price":null,"stars":0}];
+            {"id":null,"name":"test","description":"test","price":null,"stars":0}];*/
 });

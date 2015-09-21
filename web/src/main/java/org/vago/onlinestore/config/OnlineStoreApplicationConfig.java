@@ -1,19 +1,20 @@
 package org.vago.onlinestore.config;
 
+import com.google.common.collect.Sets;
 import org.vago.onlinestore.endpoint.OfferServiceEndPointImpl;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
-import java.util.HashSet;
 import java.util.Set;
 
-@ApplicationPath("/")
+import static org.vago.onlinestore.Constant.*;
+
+@ApplicationPath(APPLICATION_PATH_ONLINE_STORE)
 public class OnlineStoreApplicationConfig extends Application
 {
+    @Override
     public Set<Class<?>> getClasses()
     {
-        Set<Class<?>> resources = new HashSet<Class<?>>();
-        resources.add(OfferServiceEndPointImpl.class);
-        return resources;
+        return Sets.<Class<?>>newHashSet(OfferServiceEndPointImpl.class);
     }
 }

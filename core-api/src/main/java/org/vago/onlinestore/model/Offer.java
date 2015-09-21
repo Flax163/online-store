@@ -27,16 +27,13 @@ public class Offer implements Serializable
     @JoinColumn(name = "CATEGORIES_OFFER_ID")
     private CategoryOffer categoryOffer;
 
-    public Offer(BigInteger id, String name, String description, BigDecimal price)
+    public Offer(BigInteger id, String name, String description, BigDecimal price, CategoryOffer categoryOffer)
     {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-    }
-
-    public Offer()
-    {
+        this.categoryOffer = categoryOffer;
     }
 
     public BigInteger getId()

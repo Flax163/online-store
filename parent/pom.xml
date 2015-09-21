@@ -13,11 +13,17 @@
 
     <properties>
         <java-ee-api-version>6.0</java-ee-api-version>
-        <jax-rs-311-version>1.1.1</jax-rs-311-version>
-        <core-implementation>in-memory</core-implementation>
-        <json-processing-version>1.0</json-processing-version>
+        <javax-ws-rs-api-version>2.0</javax-ws-rs-api-version>
         <mysql-connector-version>5.1.31</mysql-connector-version>
         <eclipse-link-version>2.5.1</eclipse-link-version>
+
+        <jersey-version>2.7</jersey-version>
+        <jackson-version>2.3.2</jackson-version>
+        <guava-version>18.0</guava-version>
+
+        <junit-version>4.10</junit-version>
+
+        <core-implementation>in-memory</core-implementation>
     </properties>
 
     <profiles>
@@ -34,6 +40,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- GENERAL EE -->
             <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>
@@ -42,15 +49,12 @@
             </dependency>
             <dependency>
                 <groupId>javax.ws.rs</groupId>
-                <artifactId>jsr311-api</artifactId>
-                <version>${jax-rs-311-version}</version>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>${javax-ws-rs-api-version}</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>javax.json</groupId>
-                <artifactId>javax.json-api</artifactId>
-                <version>${json-processing-version}</version>
-            </dependency>
+
+            <!-- DATA BASE -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -60,6 +64,35 @@
                 <groupId>org.eclipse.persistence</groupId>
                 <artifactId>org.eclipse.persistence.jpa</artifactId>
                 <version>${eclipse-link-version}</version>
+            </dependency>
+
+            <!-- 3rd PARTY -->
+            <dependency>
+                <groupId>org.glassfish.jersey.containers</groupId>
+                <artifactId>jersey-container-servlet-core</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-json-jackson</artifactId>
+                <version>${jersey-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava-version}</version>
+            </dependency>
+
+            <!-- TEST-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -7,7 +7,7 @@ import org.vago.onlinestore.dto.OfferVO;
 import org.vago.onlinestore.model.Offer;
 
 import static org.vago.onlinestore.utils.CreatorModel.createOffer;
-import static org.vago.onlinestore.utils.CreatorModel.createOfferViewModel;
+import static org.vago.onlinestore.utils.CreatorModel.createOfferVO;
 
 public class OfferVOConverterTest
 {
@@ -22,7 +22,7 @@ public class OfferVOConverterTest
     @Test
     public void convert()
     {
-        OfferVO expected = createOfferViewModel(1l, "name1", "description1", 50.0);
+        OfferVO expected = createOfferVO(1l, "name1", "description1", 50.0);
         Offer offer = createOffer(1l, "name1", "description1", 50.0);
         OfferVO result = offerViewModelConverter.convert(offer);
 

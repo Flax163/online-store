@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContextType;
 import javax.persistence.PersistenceUnit;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.List;
 
 import static org.vago.onlinestore.ConstantsQuery.*;
@@ -20,13 +21,13 @@ public class LoadingOfferServiceImpl implements LoadingOfferService
     EntityManager entityManager;
 
     @Override
-    public List<Offer> getServices()
+    public Collection<Offer> loadAllOffers()
     {
         return entityManager.createQuery(SELECT_ALL_OFFERS_QUERY).getResultList();
     }
 
     @Override
-    public Offer getServiceById(BigInteger id)
+    public Offer loadOffer(BigInteger id)
     {
         return entityManager.find(Offer.class, id);
     }

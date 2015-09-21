@@ -1,76 +1,46 @@
 package org.vago.onlinestore.endpoint;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.vago.onlinestore.convert.ViewModelConverter;
-import org.vago.onlinestore.convert.anotation.OfferConverter;
+import com.google.common.base.Function;
+import com.google.common.collect.Collections2;
+import org.vago.onlinestore.convert.OfferViewModelConverter;
 import org.vago.onlinestore.dto.OfferVO;
 import org.vago.onlinestore.model.Offer;
 import org.vago.onlinestore.service.LoadingOfferService;
 
 import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
-//TODO: see json processing
-@Path("offers")
 public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 {
     LoadingOfferService loadingOfferService;
-    ViewModelConverter<OfferVO, Offer> offerViewModelConverter;
+    OfferViewModelConverter offerViewModelConverter;
 
-    public OfferServiceEndPointImpl()
-    {
-    }
+    public OfferServiceEndPointImpl() {}
 
     @Inject
-    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, @OfferConverter ViewModelConverter<OfferVO, Offer> viewModelConverter)
+    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, OfferViewModelConverter offerViewModelConverter)
     {
         this.loadingOfferService = loadingOfferService;
-        this.offerViewModelConverter = viewModelConverter;
+        this.offerViewModelConverter = offerViewModelConverter;
     }
 
     @Override
-    @GET
-    @Path("/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getOffersByCategory(@PathParam("id") BigInteger idCategory)
+    public OfferVO loadOffer(BigInteger id)
     {
-        String result = "";
-        try
-        {
-            result = new ObjectMapper().writeValueAsString(loadingOfferService.getServiceById(idCategory));
-        }
-        catch (JsonProcessingException e)
-        {
-            e.printStackTrace();
-        }
-        return result;
+        return offerViewModelConverter.convert(loadingOfferService.loadOffer(id));
     }
 
     @Override
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getOffers()
+    public Collection<OfferVO> loadOffers()
     {
-        String result = "";
-        try
+        return Collections2.transform(loadingOfferService.loadAllOffers(), new Function<Offer, OfferVO>()
         {
-            List<OfferVO> offerVOs = new ArrayList<OfferVO>();
-            List<Offer> offers = loadingOfferService.getServices();
-            for (Offer offer : offers)
+            @Override
+            public OfferVO apply(Offer input)
             {
-                offerVOs.add(offerViewModelConverter.convert(offer));
+                return offerViewModelConverter.convert(input);
             }
-            result = new ObjectMapper().writeValueAsString(offerVOs);
-        }
-        catch(JsonProcessingException e)
-        {
-            e.printStackTrace();
-        }
-        return result;
+        });
     }
 }

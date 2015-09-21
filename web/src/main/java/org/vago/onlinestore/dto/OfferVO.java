@@ -1,18 +1,25 @@
 package org.vago.onlinestore.dto;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-@XmlRootElement
 public class OfferVO
 {
+
     private BigInteger id;
     private String name;
     private String description;
     private BigDecimal price;
 
-    public OfferVO(BigInteger id, String name, String description, BigDecimal price)
+    @JsonCreator
+    protected OfferVO(final @JsonProperty("id") BigInteger id,
+                   final @JsonProperty("name") String name,
+                   final @JsonProperty("description") String description,
+                   final @JsonProperty("price") BigDecimal price)
     {
         this.id = id;
         this.name = name;
@@ -27,11 +34,6 @@ public class OfferVO
     public BigInteger getId()
     {
         return id;
-    }
-
-    public void setId(BigInteger id)
-    {
-        this.id = id;
     }
 
     public String getName()

@@ -1,20 +1,20 @@
 package org.vago.onlinestore.convert;
 
-import org.vago.onlinestore.convert.anotation.OfferConverter;
+import org.vago.onlinestore.dto.CreatorVO;
 import org.vago.onlinestore.dto.OfferVO;
 import org.vago.onlinestore.model.Offer;
 
-@OfferConverter
+import javax.inject.Inject;
+
 public class OfferViewModelConverter implements ViewModelConverter<OfferVO, Offer>
 {
+    @Inject
+    public OfferViewModelConverter()
+    {}
+
     @Override
     public OfferVO convert(Offer offer)
     {
-        OfferVO offerVO = new OfferVO();
-        offerVO.setId(offer.getId());
-        offerVO.setName(offer.getName());
-        offerVO.setDescription(offer.getDescription());
-        offerVO.setPrice(offer.getPrice());
-        return offerVO;
+        return CreatorVO.createOfferVO(offer.getId(), offer.getName(), offer.getDescription(), offer.getPrice());
     }
 }

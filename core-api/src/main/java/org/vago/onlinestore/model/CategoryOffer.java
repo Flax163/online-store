@@ -20,6 +20,13 @@ public class CategoryOffer implements Serializable
     @OneToMany(mappedBy = "categoryOffer")
     private List<Offer> offers;
 
+    public CategoryOffer(BigInteger id, String name, List<Offer> offers)
+    {
+        this.id = id;
+        this.name = name;
+        this.offers = offers;
+    }
+
     public BigInteger getId()
     {
         return id;
