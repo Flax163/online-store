@@ -1,48 +1,39 @@
-package org.vago.onlinestore.model;
+package org.vago.onlinestore.dto;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-@Entity
-@Table(name = "OFFERS")
-public class Offer implements Serializable
+public class OfferDto
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OFFER_ID")
     private BigInteger id;
-
-    @Column(name = "OFFER_NAME", length = 100, nullable = false)
     private String name;
-
-    @Column(name = "OFFER_DESCRIPTION", length = 100)
     private String description;
-
-    @Column(name = "OFFER_PRICE")
     private double price;
 
-    @ManyToOne
-    @JoinColumn(name = "CATEGORIES_OFFER_ID", referencedColumnName = "CATEGORIE_ID")
-    private CategoryOffer categoryOffer;
-
-    public Offer() {}
-
-    public Offer(BigInteger id, String name, String description, double price, CategoryOffer categoryOffer)
+    @JsonCreator
+    protected OfferDto(final @JsonProperty("id") BigInteger id,
+                       final @JsonProperty("name") String name,
+                       final @JsonProperty("description") String description,
+                       final @JsonProperty("price") double price)
     {
         this.id = id;
         this.name = name;
-        this.description = description;
         this.price = price;
-        this.categoryOffer = categoryOffer;
+        this.description = description;
+    }
+
+    protected OfferDto()
+    {
     }
 
     public BigInteger getId()
     {
         return id;
     }
-
 
     public String getName()
     {
@@ -73,4 +64,5 @@ public class Offer implements Serializable
     {
         this.description = description;
     }
+
 }

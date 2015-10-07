@@ -42,6 +42,10 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+        </dependency>
         <!-- 3rd PARTY-->
         <dependency>
             <groupId>com.google.guava</groupId>

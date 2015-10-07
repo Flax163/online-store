@@ -19,7 +19,7 @@ public class OrderUser implements Serializable
     private OrderOffer orderOffer;
 
     @ManyToOne
-    @JoinColumn(name = "ORDER_USER_ID")
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     @Column(name = "ORDER_DATA")

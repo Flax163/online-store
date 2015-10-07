@@ -1,0 +1,14 @@
+Конфигурация для Apache
+1) Для работы приложения используется Apache Tomcat Plus
+http://tomee.apache.org/downloads.html
+2) Настройка JDBC для MySQL
+необходимо на сервере в conf/server.xml добавить следующий елемент в GlobalNamingResources
+<Resource name="jdbc/store"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="123"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/STORE?createDatabaseIfNotExist=true"
+              maxActive="15"
+              maxIdle="3"/>

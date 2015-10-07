@@ -1,46 +1,42 @@
 package org.vago.onlinestore.endpoint;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Collections2;
-import org.vago.onlinestore.convert.OfferViewModelConverter;
-import org.vago.onlinestore.dto.OfferVO;
-import org.vago.onlinestore.model.Offer;
+import org.vago.onlinestore.converter.OfferConverter;
+import org.vago.onlinestore.dto.CategoryDto;
+import org.vago.onlinestore.dto.OfferDto;
+import org.vago.onlinestore.service.FacadeLoadingService;
 import org.vago.onlinestore.service.LoadingOfferService;
 
 import javax.inject.Inject;
 import java.math.BigInteger;
-import java.util.Collection;
+import java.util.List;
 
 public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 {
-    LoadingOfferService loadingOfferService;
-    OfferViewModelConverter offerViewModelConverter;
+    private FacadeLoadingService facadeLoadingService;
 
     public OfferServiceEndPointImpl() {}
 
     @Inject
-    public OfferServiceEndPointImpl(LoadingOfferService loadingOfferService, OfferViewModelConverter offerViewModelConverter)
+    public OfferServiceEndPointImpl(FacadeLoadingService facadeLoadingService)
     {
-        this.loadingOfferService = loadingOfferService;
-        this.offerViewModelConverter = offerViewModelConverter;
+        this.facadeLoadingService = facadeLoadingService;
     }
 
     @Override
-    public OfferVO loadOffer(BigInteger id)
+    public OfferDto loadOffer(BigInteger id)
     {
-        return offerViewModelConverter.convert(loadingOfferService.loadOffer(id));
+        return facadeLoadingService.loadOffer(id);
     }
 
     @Override
-    public Collection<OfferVO> loadOffers()
+    public CategoryDto loadCategory(BigInteger id)
     {
-        return Collections2.transform(loadingOfferService.loadAllOffers(), new Function<Offer, OfferVO>()
-        {
-            @Override
-            public OfferVO apply(Offer input)
-            {
-                return offerViewModelConverter.convert(input);
-            }
-        });
+        return facadeLoadingService.loadCategory(id);
+    }
+
+    @Override
+    public List<CategoryDto> loadCategories()
+    {
+        return facadeLoadingService.loadAllCategories();
     }
 }

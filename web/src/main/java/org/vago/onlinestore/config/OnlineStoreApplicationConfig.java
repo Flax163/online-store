@@ -9,7 +9,7 @@ import java.util.Set;
 
 import static org.vago.onlinestore.Constant.*;
 
-@ApplicationPath(APPLICATION_PATH_ONLINE_STORE)
+@ApplicationPath(ONLINE_STORE_PATH_APPLICATION)
 public class OnlineStoreApplicationConfig extends Application
 {
     @Override

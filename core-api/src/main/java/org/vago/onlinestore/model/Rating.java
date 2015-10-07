@@ -1,6 +1,8 @@
 package org.vago.onlinestore.model;
 
-public enum Rating
+import java.io.Serializable;
+
+public enum Rating implements Serializable
 {
     ONE, TWO, THREE, FOUR, FIVE
 }

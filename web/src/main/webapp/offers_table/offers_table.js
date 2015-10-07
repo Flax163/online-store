@@ -1,30 +1,30 @@
 var onlineStore = angular.module('onlineStore', ['ngResource', 'ngRoute']);
 
-onlineStore.config(['$routeProvider',
+/*onlineStore.config(['$routeProvider',
     function($routeProvider)
     {
         $routeProvider.when('/offers',
             {
                 templateUrl: 'offers_table/offers_table.html',
-                controller: 'offerController'
+                controller: 'loadCategoriesController'
             });
         $routeProvider.when('/test',
             {
                 templateUrl: 'offers_table/test.html'
             });
     }
-]);
+]);*/
 
-onlineStore.factory('offerFactory', ['$resource', function($resource){
-        return $resource('online-store/offers', {}, {
+onlineStore.factory('categoryFactory', ['$resource', function($resource){
+        return $resource('online-store/categories', {}, {
             get: {method:'GET', isArray:true}
         });
     }]);
 
-onlineStore.controller('offerController', function($scope, offerFactory)
+onlineStore.controller('loadCategoriesController', function($scope, categoryFactory)
 {
-    offerFactory.get(function(data) {
-        $scope.offers = data;
+    categoryFactory.get(function(data) {
+        $scope.categories = data;
     });
     /*$scope.offers =
         [{"id":null,"name":"test","description":"test","price":null,"stars":0},
