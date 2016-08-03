@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="core-in-memory:war">
+    <output-path>$PROJECT_DIR$/core-in-memory/target</output-path>
+    <root id="archive" name="local-server.war">
+      <element id="artifact" artifact-name="core-in-memory:war exploded" />
+    </root>
+  </artifact>
+</component>

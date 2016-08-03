@@ -13,10 +13,8 @@
 
     <modules>
         <module>parent</module>
-        <module>core-api</module>
-        <module>core-production</module>
-        <module>core-in-memory</module>
+        <module>core</module>
         <module>web</module>
-        <module>application</module>
+        <module>local-server</module>
     </modules>
 </project>
