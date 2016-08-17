@@ -1,8 +1,11 @@
 package org.vago.onlinestore;
 
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public final class Constant
 {
+    AtomicReference
     public static final String ONLINE_STORE_PATH_APPLICATION = "/";
     public static final String ONLINE_STORE_PATH_END_POINT = "/online-store";
 
