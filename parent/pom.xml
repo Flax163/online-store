@@ -27,21 +27,7 @@
         <junit-version>4.10</junit-version>
 
         <maven-compiler-plugin-version>3.1</maven-compiler-plugin-version>
-
-        <core-implementation>in-memory</core-implementation>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>Production</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <core-implementation>production</core-implementation>
-            </properties>
-        </profile>
-    </profiles>
 
     <build>
         <pluginManagement>

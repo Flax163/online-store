@@ -10,26 +10,24 @@ gulp.task('js-libs', function () {
     var files = [
         './bower_components/angular/angular.min.js',
         './bower_components/angular-ui-router/release/angular-ui-router.min.js',
-        './bower_components/moment/min/moment.min.js',
         './bower_components/angularjs-datepicker/dist/angular-datepicker.min.js'
     ];
     return gulp.src(files)
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('libs.js'))
+        .pipe(concat('angular.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('js', function () {
     var files = [
-        'app/temptracker.module.js',
         'app/**/*.js'
     ];
     return gulp.src(files)
         .pipe(sourcemaps.init())
         .pipe(embedTemplates())
-        .pipe(concat('app.js'))
+        .pipe(concat('application.js'))
         .pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
@@ -47,5 +45,9 @@ gulp.task('css-libs', function () {
 
 gulp.task('build', ['js-libs', 'js', 'css-libs']);
 
+gulp.task('watch', function () {
+    gulp.watch('./app/**/*', ['js']);
+    gulp.watch('./sass/**/*.scss', ['sass']);
+});
 
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'watch']);
