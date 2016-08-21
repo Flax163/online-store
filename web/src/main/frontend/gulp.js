@@ -10,12 +10,15 @@ gulp.task('js-libs', function () {
     var files = [
         './bower_components/angular/angular.min.js',
         './bower_components/angular-ui-router/release/angular-ui-router.min.js',
-        './bower_components/angularjs-datepicker/dist/angular-datepicker.min.js'
+        './bower_components/angularjs-datepicker/dist/angular-datepicker.min.js',
+        './bower_components/angular-component-router/angular_1_router.js',
+        './bower_components/jquery/dist/jquery.min.js',
+        './bower_components/bootstrap/dist/js/bootstrap.min.js'
     ];
     return gulp.src(files)
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('angular.js'))
+        .pipe(concat('libs.js'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/js'))
 });
