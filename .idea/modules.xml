@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core-api.iml" filepath="$PROJECT_DIR$/core/core-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/local-server/local-server.iml" filepath="$PROJECT_DIR$/local-server/local-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/online-store.iml" filepath="$PROJECT_DIR$/online-store.iml" />

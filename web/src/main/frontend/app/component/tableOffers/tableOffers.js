@@ -1,8 +1,13 @@
 (function () {
     'use strict';
 
-    angular.module('onlineStore')
+    function TableOfferComponent() {
+
+    }
+
+    /*angular.module('onlineStore')
         .component('tableOffers', {
-            templateUrl: 'tableOffers.html'
-        })
+            templateUrl: 'tableOffers.html',
+            controller: TableOfferComponent
+        })*/
 })();
