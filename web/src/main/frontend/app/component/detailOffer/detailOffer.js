@@ -7,7 +7,7 @@
 
     angular.module('onlineStore')
         .component('detailOffer', {
-            templateUrl: '../../detailOffer.html',
+            templateUrl: 'detailOffer.html',
             controller: DetailOfferComponent
         })
 })();

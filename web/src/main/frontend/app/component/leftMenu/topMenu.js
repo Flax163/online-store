@@ -5,8 +5,8 @@
         $scope.name = 'test';
     }
 
-    /*angular.module('onlineStore').component('topMenu', {
+    angular.module('onlineStore').component('topMenu', {
         templateUrl: 'topMenu.html',
         controller: TopMenuController
-    });*/
+    });
 })();

@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <base href="/">
     <title>Online Store</title>
+    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="theme.css">
+
     <script type="text/javascript" src="dist/js/libs.js"></script>
     <script type="text/javascript" src="dist/js/application.js"></script>
-    <link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="/" />'));
+    </script>
 </head>
 <body ng-app="onlineStore">
     <online-store></online-store>

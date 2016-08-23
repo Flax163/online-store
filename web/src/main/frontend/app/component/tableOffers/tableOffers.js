@@ -5,9 +5,9 @@
 
     }
 
-    /*angular.module('onlineStore')
+    angular.module('onlineStore')
         .component('tableOffers', {
             templateUrl: 'tableOffers.html',
             controller: TableOfferComponent
-        })*/
+        })
 })();
