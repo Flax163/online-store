@@ -9,7 +9,7 @@
     <script type="text/javascript" src="dist/js/libs.js"></script>
     <script type="text/javascript" src="dist/js/application.js"></script>
     <script type="text/javascript">
-        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="/" />'));
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + document.location + '" />'));
     </script>
 </head>
 <body ng-app="onlineStore">

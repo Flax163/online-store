@@ -9,7 +9,7 @@
         .component('onlineStore', {
             templateUrl: 'onlineStore.html',
             $routeConfig: [
-                {path: '/', name: 'TableOffers', component: 'tableOffers', useAsDefault: true},
+                {path: '/', name: 'TableOffers', component: 'tableOffers'},
                 {path: '/offer', name: 'DetailOffer', component: 'detailOffer'}
             ]
         })
