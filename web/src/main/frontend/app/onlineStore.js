@@ -9,8 +9,10 @@
         .component('onlineStore', {
             templateUrl: 'onlineStore.html',
             $routeConfig: [
-                {path: '/', name: 'TableOffers', component: 'tableOffers'},
-                {path: '/offer', name: 'DetailOffer', component: 'detailOffer'}
+                {path: '/', name: 'Welcome', component: 'welcome', useAsDefault: true},
+                {path: '/category/:id', name: 'OffersInCategories', component: 'offersInCategories'},
+                {path: '/offer/:id', name: 'DetailOffer', component: 'detailOffer'},
+                {path: '/about', name: 'About', component: 'about'}
             ]
         })
 })();
