@@ -56,7 +56,15 @@ gulp.task('css-libs', function () {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('build', ['js-libs', 'js', 'start-page', 'css-libs']);
+gulp.task('copy-in-web', function (){
+    var files = [
+        'dist/**/*'
+    ];
+    return gulp.src(files)
+        .pipe(gulp.dest('../webapp'))
+});
+
+gulp.task('build', ['js-libs', 'js', 'start-page', 'css-libs', 'copy-in-web']);
 
 gulp.task('watch', function () {
     gulp.watch('./app/**/*', ['js']);

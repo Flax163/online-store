@@ -26,12 +26,6 @@
             <artifactId>javaee-api</artifactId>
         </dependency>
 
-        <!-- DATABASE -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
         <!-- 3rd PARTY -->
         <dependency>
             <groupId>com.google.guava</groupId>

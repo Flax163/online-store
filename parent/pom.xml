@@ -12,21 +12,32 @@
     <name>Online Store Parent</name>
 
     <properties>
+        <!-- JDK version -->
         <java-version>1.8</java-version>
-        <encoding-version>UTF-8</encoding-version>
 
-        <java-ee-api-version>6.0</java-ee-api-version>
-        <javax-ws-rs-api-version>2.0</javax-ws-rs-api-version>
-        <mysql-connector-version>5.1.31</mysql-connector-version>
-        <eclipse-link-version>2.5.1</eclipse-link-version>
-
-        <jersey-version>2.7</jersey-version>
-        <jackson-version>2.3.2</jackson-version>
-        <guava-version>18.0</guava-version>
-
-        <junit-version>4.10</junit-version>
-
+        <!--plugins dependency -->
+        <maven-war-plugin-version>2.6</maven-war-plugin-version>
         <maven-compiler-plugin-version>3.1</maven-compiler-plugin-version>
+
+        <!-- JEE Specification dependency -->
+        <jee-version>7.0</jee-version>
+        <javax-rs-version>2.0.1</javax-rs-version>
+
+        <!-- 3rd party dependency -->
+        <jersey-version>2.23.2</jersey-version>
+        <jackson-version>2.8.1</jackson-version>
+        <guava-version>19.0</guava-version>
+
+        <!-- Test dependency -->
+        <junit-version>4.12</junit-version>
+        <mockito-version>1.10.19</mockito-version>
+        <hamcrest-version>1.3</hamcrest-version>
+        <arquillian-junit-version>1.1.11.Final</arquillian-junit-version>
+
+        <!-- Front end -->
+        <front-end-plugin-version>1.0</front-end-plugin-version>
+        <node-version>v5.3.0</node-version>
+        <npm-version>3.3.12</npm-version>
     </properties>
 
     <build>
@@ -39,51 +50,30 @@
                     <configuration>
                         <source>${java-version}</source>
                         <target>${java-version}</target>
-                        <encoding>${encoding-version}</encoding>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven-war-plugin-version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-        </plugins>
     </build>
 
     <dependencyManagement>
         <dependencies>
-            <!-- GENERAL EE -->
+            <!-- JEE Specification dependency -->
             <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>
-                <version>${java-ee-api-version}</version>
+                <version>${jee-version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.ws.rs</groupId>
                 <artifactId>javax.ws.rs-api</artifactId>
-                <version>${javax-ws-rs-api-version}</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <!-- DATA BASE -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.persistence</groupId>
-                <artifactId>eclipselink</artifactId>
-                <version>${eclipse-link-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.persistence</groupId>
-                <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
-                <version>${eclipse-link-version}</version>
+                <version>${javax-rs-version}</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -114,8 +104,67 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.junit</groupId>
+                <artifactId>arquillian-junit-container</artifactId>
+                <version>${arquillian-junit-version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>Frontend Build</id>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.github.eirslett</groupId>
+                            <artifactId>frontend-maven-plugin</artifactId>
+                            <version>${front-end-plugin-version}</version>
+                            <configuration>
+                                <workingDirectory>src/main/frontend</workingDirectory>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>install node and npm</id>
+                                    <goals>
+                                        <goal>install-node-and-npm</goal>
+                                    </goals>
+                                    <configuration>
+                                        <nodeVersion>${node-version}</nodeVersion>
+                                        <npmVersion>${npm-version}</npmVersion>
+                                    </configuration>
+                                </execution>
+
+                                <execution>
+                                    <id>npm install</id>
+                                    <goals>
+                                        <goal>npm</goal>
+                                    </goals>
+                                    <configuration>
+                                        <arguments>install</arguments>
+                                    </configuration>
+                                </execution>
+
+                                <execution>
+                                    <id>gulp build</id>
+                                    <goals>
+                                        <goal>gulp</goal>
+                                    </goals>
+                                    <configuration>
+                                        <arguments>build</arguments>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

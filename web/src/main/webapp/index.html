@@ -1,71 +1,17 @@
 <!DOCTYPE html>
-<html ng-app="onlineStore">
-    <head lang="en">
-        <meta charset="UTF-8">
-        <title>Online Store</title>
-        <script src="lib/angular.min.js"></script>
-        <script src="lib/angular-resource.min.js"></script>
-        <script src="lib/angular-route.min.js"></script>
-        <script src="offers_table/offers_table.js"></script>
-        <link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    </head>
-    <body>
-        <header>
-            <div class="navbar navbar-inverse">
-                <div class="navbar-inner">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <a class="navbar-brand">Online-store</a>
-                        </div>
-                        <div class="collapse navbar-collapse">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="#">
-                                       ololo
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        ololo
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="col-md-3" ng-controller="loadCategoriesController">
-                    <div class="well sidebar-nav">
-                        <ul class="nav nav-list" ng-repeat="category in categories">
-                            <li><a href="#offers">{{category.name}}</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--<div class="col-md-9">
-                    <div ng-repeat="offer in offers">
-                        <div class="col-lg-6">
-                            <div class="thumbnail">
-                                <h3 class="caption text-center">{{offer.name}}</h3>
-                                <div>
-                                    <a href="#">
-                                        <img src="http://placehold.it/300x200" alt="">
-                                    </a>
-                                </div>
-                                <div>
-                                    <p>Описание: {{offer.description}}</p>
-                                    <button type="button" class="btn btn-success btn-block">
-                                        <span class="glyphicon glyphicon-shopping-cart"></span> Добавить в корзину
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Store</title>
+    <link type="text/css" rel="stylesheet" href="css/libs.css">
+
+    <script type="text/javascript" src="js/libs.js"></script>
+    <script type="text/javascript" src="js/application.js"></script>
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + document.location + '" />'));
+    </script>
+</head>
+<body ng-app="onlineStore">
+    <online-store></online-store>
+</body>
 </html>
