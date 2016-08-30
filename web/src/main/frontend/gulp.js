@@ -37,16 +37,26 @@ gulp.task('js', function () {
         .pipe(gulp.dest('./dist/js'))
 });
 
+gulp.task('start-page', function() {
+    var files = [
+        "app/index.html"
+    ];
+    return gulp.src(files)
+        .pipe(concat('index.html'))
+        .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('css-libs', function () {
     var files = [
-        './bower_components/angularjs-datepicker/dist/angular-datepicker.min.css'
+        './bower_components/bootstrap/dist/css/bootstrap.min.css',
+        './app/theme.css'
     ];
     return gulp.src(files)
         .pipe(concat('libs.css'))
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('build', ['js-libs', 'js', 'css-libs']);
+gulp.task('build', ['js-libs', 'js', 'start-page', 'css-libs']);
 
 gulp.task('watch', function () {
     gulp.watch('./app/**/*', ['js']);

@@ -1,3 +1,6 @@
 /*.iml
 /core/*.iml
 *.iml
+/web/src/main/frontend/bower_components
+/web/src/main/frontend/node_modules
+dist

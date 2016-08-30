@@ -2,9 +2,6 @@
   "name": "online-store",
   "version": "1.0.0",
   "description": "",
-  "local-web-server": {
-    "port": 8100
-  },
   "devDependencies": {
     "bower": "^1.7.7",
     "local-web-server": "^1.2.6",
@@ -20,8 +17,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "npm ws",
-    "start-http": "http-server ./ -a localhost -p 3000 -c-1",
-    "start-node": "node ./server/test.js"
+    "start": "npm run start-local-server",
+    "start-local-server": "node ./server.js"
   }
 }
