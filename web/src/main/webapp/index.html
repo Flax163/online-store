@@ -5,13 +5,19 @@
     <title>Online Store</title>
     <link type="text/css" rel="stylesheet" href="css/libs.css">
 
+</head>
+<body>
+    <online-store></online-store>
+
     <script type="text/javascript" src="js/libs.js"></script>
     <script type="text/javascript" src="js/application.js"></script>
     <script type="text/javascript">
-        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + document.location + '" />'));
+        angular.element(document.getElementsByTagName('head'))
+                .append(angular.element('<base href="' + document.location + '" />'));
+
+        angular.element(document).ready(function() {
+            angular.bootstrap(document, ['onlineStore']);
+        });
     </script>
-</head>
-<body ng-app="onlineStore">
-    <online-store></online-store>
 </body>
 </html>

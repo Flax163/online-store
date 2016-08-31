@@ -1,11 +1,10 @@
 var express = require('express');
-var path = require('path');
 
 var app = express();
 
 app.use(express.static('dist'));
 
-app.get('/catalogs', function (req, res) {
+app.get('/rest/catalogs', function (req, res) {
     var catalogs = [{
         id: 1,
         name: 'category 1'

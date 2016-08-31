@@ -1,13 +1,14 @@
 (function () {
     'use strict';
 
-    function DetailOfferComponent() {
+    function DetailOfferComponent(offerService) {
 
+        
     }
 
     angular.module('onlineStore')
         .component('detailOffer', {
             templateUrl: 'detailOffer.html',
-            controller: DetailOfferComponent
+            controller: ['offerService', DetailOfferComponent]
         })
 })();
