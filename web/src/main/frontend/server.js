@@ -16,6 +16,15 @@ app.get('/rest/catalogs', function (req, res) {
     res.json(catalogs);
 });
 
+app.get('/rest/offer/:idOffer', function (req, res) {
+    var requestIdOffer = req.params.idOffer;
+    var offer = {
+        id: requestIdOffer,
+        name: 'offer ' + requestIdOffer
+    };
+    res.json(offer);
+});
+
 app.get('/', function (req, res) {
     res.sendfile('index.html');
 });

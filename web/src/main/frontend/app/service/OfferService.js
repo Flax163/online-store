@@ -7,7 +7,6 @@
                 return $resource('rest/offer/:idOffer', {}, {
                     query: {
                         method: 'GET',
-                        params: {idOffer: 'phones'},
                         isArray: false
                     }
                 });
