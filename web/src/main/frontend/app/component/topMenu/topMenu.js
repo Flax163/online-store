@@ -1,13 +1,13 @@
 (function () {
     'use strict';
 
-    function TopMenuComponent($scope) {
-        $scope.name = 'test';
+    function TopMenuComponent(categoryService) {
+        this.categories = categoryService.query();
     }
 
     angular.module('onlineStore')
         .component('topMenu', {
             templateUrl: 'topMenu.html',
-            controller: TopMenuComponent
+            controller: ['categoryService', TopMenuComponent]
         });
 })();

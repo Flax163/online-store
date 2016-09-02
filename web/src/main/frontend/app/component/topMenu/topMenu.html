@@ -15,9 +15,10 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Товары<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a ng-link="['OffersInCategories']">Категория 1</a></li>
-                            <li><a ng-link="['DetailOffer', {id:1}]">Категория 2</a></li>
+                        <ul class="dropdown-menu" >
+                            <li ng-repeat="category in $ctrl.categories">
+                                <a ng-link="['DetailOffer', {id:{{category.id}}}]">{{category.name}}</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a ng-link="['About']">О нас</a></li>
