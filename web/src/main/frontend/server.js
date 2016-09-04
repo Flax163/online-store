@@ -16,13 +16,27 @@ app.get('/rest/category', function (req, res) {
     res.json(catalogs);
 });
 
-app.get('/rest/offer/:idOffer', function (req, res) {
+app.get('/rest/category/:idCategory/offer/:idOffer', function (req, res) {
     var requestIdOffer = req.params.idOffer;
     var offer = {
         id: requestIdOffer,
         name: 'offer ' + requestIdOffer
     };
     res.json(offer);
+});
+
+app.get('/rest/category/:idCategory/offer', function (req, res) {
+    var offers = [
+        {id: 1, name :'offer 1', description: 'description 1'},
+        {id: 2, name :'offer 2', description: 'description 2'},
+        {id: 3, name :'offer 3', description: 'description 3'},
+        {id: 4, name :'offer 4', description: 'description 4'},
+        {id: 5, name :'offer 5', description: 'description 5'},
+        {id: 6, name :'offer 6', description: 'description 6'},
+        {id: 7, name :'offer 7', description: 'description 7'},
+        {id: 8, name :'offer 8', description: 'description 8'},
+        {id: 9, name :'offer 9', description: 'description 9'}];
+    res.json(offers);
 });
 
 app.get('/', function (req, res) {

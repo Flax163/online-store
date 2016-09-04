@@ -10,7 +10,7 @@
             templateUrl: 'onlineStore.html',
             $routeConfig: [
                 {path: '/', name: 'Welcome', component: 'welcome', useAsDefault: true},
-                {path: '/category', name: 'OffersInCategories', component: 'offersInCategories'},
+                {path: '/category/:id', name: 'OffersInCategories', component: 'offersInCategories'},
                 {path: '/offer/:id', name: 'DetailOffer', component: 'detailOffer'},
                 {path: '/about', name: 'About', component: 'about'}
             ]

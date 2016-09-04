@@ -17,7 +17,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown">Товары<b class="caret"></b></a>
                         <ul class="dropdown-menu" >
                             <li ng-repeat="category in $ctrl.categories">
-                                <a ng-link="['DetailOffer', {id:{{category.id}}}]">{{category.name}}</a>
+                                <a ng-link="['OffersInCategories', {id:{{category.id}}}]">{{category.name}}</a>
                             </li>
                         </ul>
                     </li>

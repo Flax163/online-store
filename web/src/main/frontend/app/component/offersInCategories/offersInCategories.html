@@ -1,1 +1,11 @@
-<div>Offers In Categories</div>
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="category in $ctrl.categories">
+        <div class="thumbnail">
+            <img data-src="holder.js/300x200" alt="...">
+            <div class="caption">
+                <h3 align="center">{{category.name}}</h3>
+                <p>{{category.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

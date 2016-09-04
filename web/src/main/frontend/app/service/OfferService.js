@@ -4,12 +4,7 @@
     angular.module('onlineStore')
         .factory('offerService', ['$resource',
             function($resource) {
-                return $resource('rest/offer/:idOffer', {}, {
-                    query: {
-                        method: 'GET',
-                        isArray: false
-                    }
-                });
+                return $resource('rest/category/:idCategory/offer/:idOffer', {}, {});
             }
         ])
 

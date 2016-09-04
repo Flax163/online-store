@@ -3,7 +3,7 @@
 
     function DetailOfferComponent(offerService) {
         this.$routerOnActivate = function(next) {
-            this.offerDetail = offerService.get({idOffer: next.params.id});
+            this.offerDetail = offerService.get({idOffer: next.params.idOffer});
         };
     }
 
