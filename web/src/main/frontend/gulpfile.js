@@ -1,13 +1,20 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
-var ngAnnotate = require('gulp-ng-annotate');
-var embedTemplates = require('gulp-angular-embed-templates');
-var autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const ngAnnotate = require('gulp-ng-annotate');
+const embedTemplates = require('gulp-angular-embed-templates');
+const autoprefixer = require('gulp-autoprefixer');
+const clean = require('gulp-clean');
+
+gulp.task('clean', function () {
+    const files = ["dist"];
+    return gulp.src(files, {read: false})
+        .pipe(clean())
+});
 
 gulp.task('js-libs', function () {
-    var files = [
+    const files = [
         './bower_components/angular/angular.min.js',
         './bower_components/angular-resource/angular-resource.min.js',
         './bower_components/angular-component-router/angular_1_router.js',
@@ -23,7 +30,7 @@ gulp.task('js-libs', function () {
 });
 
 gulp.task('js', function () {
-    var files = [
+    const files = [
         'app/**/*.js'
     ];
     return gulp.src(files)
@@ -37,7 +44,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('start-page', function() {
-    var files = [
+    const files = [
         "app/index.html"
     ];
     return gulp.src(files)
@@ -46,7 +53,7 @@ gulp.task('start-page', function() {
 });
 
 gulp.task('css-libs', function () {
-    var files = [
+    const files = [
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './app/theme.css'
     ];
@@ -57,7 +64,7 @@ gulp.task('css-libs', function () {
 });
 
 gulp.task('copy-in-web', function (){
-    var files = [
+    const files = [
         'dist/**/*'
     ];
     return gulp.src(files)
@@ -71,4 +78,4 @@ gulp.task('watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['clean','build', 'watch']);
