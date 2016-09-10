@@ -10,7 +10,6 @@
             <a class="navbar-brand" ng-link="['Welcome']">Интернет магазин</a>
         </div>
         <div class="navbar-collapse collapse">
-
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
@@ -23,7 +22,13 @@
                     </li>
                     <li><a ng-link="['About']">О нас</a></li>
                 </ul>
+                <ul class="nav navbar-nav" style="float:right">
+                    <li><a ng-link="['Cart']">Корзина <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                    <li><a data-toggle="modal" data-target="#signInDialog">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
+                    <li><a>Регистрация</a></li>
+                </ul>
             </div>
         </div>
     </div>
+    <sign-in-dialog></sign-in-dialog>
 </div>

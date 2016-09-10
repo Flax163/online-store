@@ -63,7 +63,15 @@ gulp.task('css-libs', function () {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('copy-in-web', function (){
+gulp.task('copy-fonts', function() {
+    const files = [
+        './bower_components/bootstrap/dist/fonts/**/*'
+    ];
+    return gulp.src(files)
+        .pipe(gulp.dest('./dist/fonts'));
+});
+
+gulp.task('copy-in-web', function(){
     const files = [
         'dist/**/*'
     ];
@@ -71,11 +79,11 @@ gulp.task('copy-in-web', function (){
         .pipe(gulp.dest('../webapp'))
 });
 
-gulp.task('build', ['js-libs', 'js', 'start-page', 'css-libs', 'copy-in-web']);
+gulp.task('build', ['copy-fonts', 'js-libs', 'js', 'start-page', 'css-libs', 'copy-in-web']);
 
 gulp.task('watch', function () {
     gulp.watch('./app/**/*', ['js']);
     gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['clean','build', 'watch']);
+gulp.task('default', ['build', 'watch']);

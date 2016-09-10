@@ -12,7 +12,8 @@
                 {path: '/', name: 'Welcome', component: 'welcome', useAsDefault: true},
                 {path: '/category/:id', name: 'OffersInCategories', component: 'offersInCategories'},
                 {path: '/offer/:id', name: 'DetailOffer', component: 'detailOffer'},
-                {path: '/about', name: 'About', component: 'about'}
+                {path: '/about', name: 'About', component: 'about'},
+                {path: '/cart', name:'Cart', component: 'cart'}
             ]
         })
 })();

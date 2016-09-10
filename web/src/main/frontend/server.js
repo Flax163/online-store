@@ -5,7 +5,7 @@ var app = express();
 app.use(express.static('dist'));
 
 app.get('/rest/category', function (req, res) {
-    var catalogs = [{
+    const catalogs = [{
         id: 1,
         name: 'category 1'
     },
@@ -16,9 +16,22 @@ app.get('/rest/category', function (req, res) {
     res.json(catalogs);
 });
 
+app.get('/rest/cart', function (req, res) {
+
+    const offers = [{
+        id: 10,
+        name: 'offer in cart 10'
+    },
+    {
+        id: 11,
+        name: 'offer in cart 11'
+    }];
+    res.json(offers);
+});
+
 app.get('/rest/category/:idCategory/offer/:idOffer', function (req, res) {
-    var requestIdOffer = req.params.idOffer;
-    var offer = {
+    const requestIdOffer = req.params.idOffer;
+    const offer = {
         id: requestIdOffer,
         name: 'offer ' + requestIdOffer
     };
@@ -26,7 +39,7 @@ app.get('/rest/category/:idCategory/offer/:idOffer', function (req, res) {
 });
 
 app.get('/rest/category/:idCategory/offer', function (req, res) {
-    var offers = [
+    const offers = [
         {id: 1, name :'offer 1', description: 'description 1'},
         {id: 2, name :'offer 2', description: 'description 2'},
         {id: 3, name :'offer 3', description: 'description 3'},
