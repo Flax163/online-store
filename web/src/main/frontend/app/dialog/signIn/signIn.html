@@ -6,11 +6,12 @@
                 <h4 class="modal-title" id="myModalLabel">Войти в онлайн магазин</h4>
             </div>
             <div class="modal-body">
-
+                <input type="text" ng-model="user.login" title="login" class="form-control" placeholder="Username">
+                <input type="text" ng-model="user.password" title="password" class="form-control" placeholder="Password">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary">Войти</button>
+                <button type="button" class="btn btn-primary" ng-click="$ctrl.authorization(user)">Войти</button>
             </div>
         </div>
     </div>

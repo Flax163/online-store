@@ -1,8 +1,10 @@
 var express = require('express');
+var bodyParser = require("body-parser");
 
 var app = express();
 
 app.use(express.static('dist'));
+app.use(bodyParser.json());
 
 app.get('/rest/category', function (req, res) {
     const catalogs = [{
@@ -50,6 +52,17 @@ app.get('/rest/category/:idCategory/offer', function (req, res) {
         {id: 8, name :'offer 8', description: 'description 8'},
         {id: 9, name :'offer 9', description: 'description 9'}];
     res.json(offers);
+});
+
+app.post('/rest/authorization', function(req, res) {
+    const login = req.body.login;
+    const password = req.body.password;
+    var isAuthorization = false;
+    if (login === 'vago' && password === '123')
+    {
+        isAuthorization = true;
+    }
+    res.send({isAuthorization: isAuthorization});
 });
 
 app.get('/', function (req, res) {
