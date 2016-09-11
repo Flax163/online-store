@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('onlineStore', ['ngComponentRouter', 'ngResource'])
+    angular.module('onlineStore', ['ngComponentRouter', 'ngResource', 'ngCookies'])
         .config(function($locationProvider) {
             $locationProvider.html5Mode(true);
         })

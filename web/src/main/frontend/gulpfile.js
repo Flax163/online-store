@@ -18,6 +18,7 @@ gulp.task('js-libs', function () {
         './bower_components/angular/angular.min.js',
         './bower_components/angular-resource/angular-resource.min.js',
         './bower_components/angular-component-router/angular_1_router.js',
+        './bower_components/angular-cookies/angular-cookies.min.js',
         './bower_components/jquery/dist/jquery.min.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js'
     ];

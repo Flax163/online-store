@@ -24,8 +24,9 @@
                 </ul>
                 <ul class="nav navbar-nav" style="float:right">
                     <li><a ng-link="['Cart']">Корзина <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                    <li><a data-toggle="modal" data-target="#signInDialog">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
-                    <li><a>Регистрация</a></li>
+                    <li><a ng-show="isAuthorization" data-target="#signInDialog" data-toggle="modal">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
+                    <li><a>Выйти <span class="glyphicon glyphicon-log-out"></span></a></li>
+                    <li><a ng-show="isAuthorization">Регистрация</a></li>
                 </ul>
             </div>
         </div>
