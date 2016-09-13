@@ -1,16 +1,19 @@
 (function() {
     "use strict";
 
-    function SignInDialog(authorizationService, $cookieStore) {
+    function SignInDialog(authorizationService, $cookieStore, currentUser) {
         var ctrl = this;
-        this.authorization = function(user) {
+        this.authorization = function(user, rememberUser) {
             var authData = {login: user.login, password: user.password};
             authorizationService.save(authData, function(data) {
                 if (data.isAuthorization === true)
                 {
-                    $('#signInDialog').modal("hide");
-                    $cookieStore.put('user', authData);
+                    if (rememberUser) {
+                        $cookieStore.put('user', authData);
+                    }
                     ctrl.authorizationMessage = '';
+                    currentUser.authorization();
+                    $('#signInDialog').modal("hide");
                 }
                 else
                 {
@@ -23,6 +26,6 @@
     angular.module('onlineStore')
         .component('signInDialog', {
             templateUrl: 'signIn.html',
-            controller: ['authorizationService', '$cookieStore', SignInDialog]
+            controller: ['authorizationService', '$cookieStore', 'currentUser', SignInDialog]
         });
 })();

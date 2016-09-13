@@ -22,11 +22,11 @@
                     </li>
                     <li><a ng-link="['About']">О нас</a></li>
                 </ul>
-                <ul class="nav navbar-nav" style="float:right">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a ng-link="['Cart']">Корзина <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                    <li><a ng-show="isAuthorization" data-target="#signInDialog" data-toggle="modal">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
-                    <li><a>Выйти <span class="glyphicon glyphicon-log-out"></span></a></li>
-                    <li><a ng-show="isAuthorization">Регистрация</a></li>
+                    <li ng-hide="$ctrl.currentUser.isAuthorization()"><a data-target="#signInDialog" data-toggle="modal">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
+                    <li ng-show="$ctrl.currentUser.isAuthorization()"><a ng-click="$ctrl.singOut();">Выйти <span class="glyphicon glyphicon-log-out"></span></a></li>
+                    <li ng-hide="$ctrl.currentUser.isAuthorization()"><a >Регистрация</a></li>
                 </ul>
             </div>
         </div>
