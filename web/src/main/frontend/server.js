@@ -55,14 +55,27 @@ app.get('/rest/category/:idCategory/offer', function (req, res) {
 });
 
 app.post('/rest/authorization', function(req, res) {
-    const login = req.body.login;
-    const password = req.body.password;
-    var isAuthorization = false;
-    if (login === 'vago' && password === '123')
-    {
-        isAuthorization = true;
+    if (req.body.token === undefined) {
+        const login = req.body.login;
+        const password = req.body.password;
+        var token;
+        if (login === 'vago' && password === '123') {
+            token = 'any token';
+        }
+        if (token === undefined) {
+            res.statusCode = 401;
+            res.send();
+        } else {
+            res.send({token: token});
+        }
     }
-    res.send({isAuthorization: isAuthorization});
+    else {
+        if (req.body.token == 'any token')
+        {
+            res.send({token: req.body.token});
+        }
+        console.log(req.body.token);
+    }
 });
 
 app.get('/', function (req, res) {
