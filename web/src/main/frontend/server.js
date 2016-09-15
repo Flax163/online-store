@@ -42,15 +42,15 @@ app.get('/rest/category/:idCategory/offer/:idOffer', function (req, res) {
 
 app.get('/rest/category/:idCategory/offer', function (req, res) {
     const offers = [
-        {id: 1, name :'offer 1', description: 'description 1'},
-        {id: 2, name :'offer 2', description: 'description 2'},
-        {id: 3, name :'offer 3', description: 'description 3'},
-        {id: 4, name :'offer 4', description: 'description 4'},
-        {id: 5, name :'offer 5', description: 'description 5'},
-        {id: 6, name :'offer 6', description: 'description 6'},
-        {id: 7, name :'offer 7', description: 'description 7'},
-        {id: 8, name :'offer 8', description: 'description 8'},
-        {id: 9, name :'offer 9', description: 'description 9'}];
+        {id: 1, name :'offer 1', description: 'description 1', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 2, name :'offer 2', description: 'description 2', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 3, name :'offer 3', description: 'description 3', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 4, name :'offer 4', description: 'description 4', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 5, name :'offer 5', description: 'description 5', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 6, name :'offer 6', description: 'description 6', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 7, name :'offer 7', description: 'description 7', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 8, name :'offer 8', description: 'description 8', pathImage: 'resources/images/placeholder_offer.png'},
+        {id: 9, name :'offer 9', description: 'description 9', pathImage: 'resources/images/placeholder_offer.png'}];
     res.json(offers);
 });
 
@@ -74,7 +74,6 @@ app.post('/rest/authorization', function(req, res) {
         {
             res.send({token: req.body.token});
         }
-        console.log(req.body.token);
     }
 });
 

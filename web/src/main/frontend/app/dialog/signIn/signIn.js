@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    function SignInDialog(authorizationService, $cookieStore, metadataUser) {
+    function SignInDialog(authorizationService, metadataUser, $cookieStore) {
         var ctrl = this;
         this.authorization = function(user, rememberUser) {
             var authData = {login: user.login, password: user.password};

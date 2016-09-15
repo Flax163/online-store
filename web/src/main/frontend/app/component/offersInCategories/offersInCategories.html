@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-sm-6 col-md-4" ng-repeat="category in $ctrl.categories">
+    <div class="col-sm-6 col-md-4" ng-repeat="offer in $ctrl.offers">
         <div class="thumbnail">
-            <img data-src="holder.js/300x200" alt="...">
+            <h3 align="center">{{offer.name}}</h3>
             <div class="caption">
-                <h3 align="center">{{category.name}}</h3>
-                <p>{{category.description}}</p>
+                <p>{{offer.description}}</p>
             </div>
+            <img src="{{offer.pathImage}}" alt="...">
         </div>
     </div>
 </div>

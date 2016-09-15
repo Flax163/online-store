@@ -3,7 +3,7 @@
 
     function OffersInCategoriesComponent(offerService) {
         this.$routerOnActivate = function(next) {
-            this.categories = offerService.query({idCategory: next.params.id});
+            this.offers = offerService.query({idCategory: next.params.id});
         };
     }
 

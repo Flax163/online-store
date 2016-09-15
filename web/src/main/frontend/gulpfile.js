@@ -72,6 +72,14 @@ gulp.task('copy-fonts', function() {
         .pipe(gulp.dest('./dist/fonts'));
 });
 
+gulp.task('copy-resources', function() {
+    const files = [
+        './resources/**/*'
+    ];
+    return gulp.src(files)
+        .pipe(gulp.dest('./dist/resources'));
+});
+
 gulp.task('copy-in-web', function(){
     const files = [
         'dist/**/*'
@@ -80,7 +88,7 @@ gulp.task('copy-in-web', function(){
         .pipe(gulp.dest('../webapp'))
 });
 
-gulp.task('build', ['copy-fonts', 'js-libs', 'js', 'start-page', 'css-libs', 'copy-in-web']);
+gulp.task('build', ['copy-fonts', 'copy-resources', 'js-libs', 'js', 'start-page', 'css-libs', 'copy-in-web']);
 
 gulp.task('watch', function () {
     gulp.watch('./app/**/*', ['js']);
