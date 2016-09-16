@@ -14,6 +14,7 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 {
     private FacadeLoadingService facadeLoadingService;
 
+
     public OfferServiceEndPointImpl() {}
 
     @Inject
