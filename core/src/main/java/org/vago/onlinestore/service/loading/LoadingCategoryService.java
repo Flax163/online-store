@@ -1,4 +1,4 @@
-package org.vago.onlinestore.service;
+package org.vago.onlinestore.service.loading;
 
 import org.vago.onlinestore.model.CategoryOffer;
 
@@ -8,7 +8,6 @@ import java.math.BigInteger;
 import java.util.List;
 
 @Local
-@Remote
 public interface LoadingCategoryService
 {
     List<CategoryOffer> loadAllCategories();

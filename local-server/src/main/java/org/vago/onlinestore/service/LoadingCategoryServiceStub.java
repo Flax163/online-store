@@ -1,6 +1,7 @@
 package org.vago.onlinestore.service;
 
 import org.vago.onlinestore.model.CategoryOffer;
+import org.vago.onlinestore.service.loading.LoadingCategoryService;
 
 import java.math.BigInteger;
 import java.util.List;

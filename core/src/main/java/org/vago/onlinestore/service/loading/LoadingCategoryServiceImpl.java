@@ -1,8 +1,7 @@
-package org.vago.onlinestore.service.impl;
+package org.vago.onlinestore.service.loading;
 
 import org.vago.onlinestore.ConstantsQuery;
 import org.vago.onlinestore.model.CategoryOffer;
-import org.vago.onlinestore.service.LoadingCategoryService;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

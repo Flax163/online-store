@@ -1,4 +1,4 @@
-package org.vago.onlinestore.service;
+package org.vago.onlinestore.service.loading;
 
 import org.vago.onlinestore.model.Offer;
 
@@ -9,7 +9,6 @@ import java.util.Collection;
 import java.util.List;
 
 @Local
-@Remote
 public interface LoadingOfferService
 {
     Offer loadOffer(BigInteger id);

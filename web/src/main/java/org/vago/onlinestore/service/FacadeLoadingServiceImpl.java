@@ -1,4 +1,4 @@
-package org.vago.onlinestore.service.impl;
+package org.vago.onlinestore.service;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
@@ -7,10 +7,8 @@ import org.vago.onlinestore.converter.OfferConverter;
 import org.vago.onlinestore.dto.CategoryDto;
 import org.vago.onlinestore.dto.OfferDto;
 import org.vago.onlinestore.model.CategoryOffer;
-import org.vago.onlinestore.model.Offer;
-import org.vago.onlinestore.service.FacadeLoadingService;
-import org.vago.onlinestore.service.LoadingCategoryService;
-import org.vago.onlinestore.service.LoadingOfferService;
+import org.vago.onlinestore.service.loading.LoadingCategoryService;
+import org.vago.onlinestore.service.loading.LoadingOfferService;
 
 import javax.inject.Inject;
 import java.math.BigInteger;

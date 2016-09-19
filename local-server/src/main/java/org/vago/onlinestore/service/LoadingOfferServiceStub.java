@@ -3,6 +3,7 @@ package org.vago.onlinestore.service;
 import org.vago.onlinestore.model.CategoryOffer;
 import org.vago.onlinestore.model.CreatorModel;
 import org.vago.onlinestore.model.Offer;
+import org.vago.onlinestore.service.loading.LoadingOfferService;
 
 import javax.ejb.Stateless;
 import java.math.BigInteger;
