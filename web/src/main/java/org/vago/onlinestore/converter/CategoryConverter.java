@@ -3,7 +3,7 @@ package org.vago.onlinestore.converter;
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
 import org.vago.onlinestore.dto.CategoryDto;
-import org.vago.onlinestore.dto.CreatorDto;
+import org.vago.onlinestore.dto.FactoryDto;
 import org.vago.onlinestore.dto.OfferDto;
 import org.vago.onlinestore.model.CategoryOffer;
 import org.vago.onlinestore.model.Offer;
@@ -36,6 +36,6 @@ public class CategoryConverter implements Converter<CategoryDto, CategoryOffer>
             }
         });
 
-        return CreatorDto.createCategory(id, name, offers);
+        return FactoryDto.createCategory(id, name, offers);
     }
 }

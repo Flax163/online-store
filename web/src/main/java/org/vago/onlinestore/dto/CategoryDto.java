@@ -3,47 +3,42 @@ package org.vago.onlinestore.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.annotation.Nonnull;
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 
-public class CategoryDto
+public class CategoryDto implements Serializable
 {
     private BigInteger id;
     private String name;
     private List<OfferDto> offers;
 
     @JsonCreator
-    public CategoryDto(final @JsonProperty("id") BigInteger id,
-                       final @JsonProperty("name") String name,
-                       final @JsonProperty("offers") List<OfferDto> offers)
+    CategoryDto(@Nonnull @JsonProperty("id") final BigInteger id,
+                @Nonnull @JsonProperty("name") final String name,
+                @Nonnull @JsonProperty("offers") final List<OfferDto> offers)
     {
         this.id = id;
         this.name = name;
         this.offers = offers;
     }
 
+    @Nonnull
     public BigInteger getId()
     {
         return id;
     }
 
+    @Nonnull
     public String getName()
     {
         return name;
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
+    @Nonnull
     public List<OfferDto> getOffers()
     {
         return offers;
-    }
-
-    public void setOffers(List<OfferDto> offers)
-    {
-        this.offers = offers;
     }
 }
