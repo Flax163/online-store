@@ -6,15 +6,15 @@ import org.vago.onlinestore.dto.TokenDto;
 public class AuthorizationEndPointImpl implements AuthorizationEndPoint
 {
     @Override
-    public void authorization(CredentialDto credential)
-    {
-        //TODO: implements
-    }
-
-    @Override
-    public TokenDto authorization(TokenDto token)
+    public TokenDto authorization(CredentialDto credential)
     {
         //TODO: implements
         return null;
+    }
+
+    @Override
+    public void authorization(TokenDto token)
+    {
+        //TODO: implements
     }
 }
