@@ -6,7 +6,7 @@
 
     <groupId>org.vago.onlinestore</groupId>
     <artifactId>parent</artifactId>
-    <version>next</version>
+    <version>next-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Online Store Parent</name>

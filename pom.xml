@@ -6,15 +6,17 @@
 
     <groupId>org.vago.onlinestore</groupId>
     <artifactId>online-store</artifactId>
-    <version>next</version>
+    <version>next-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Online Store</name>
 
     <modules>
         <module>parent</module>
-        <module>core</module>
-        <module>web</module>
-        <module>local-server</module>
+        <module>jdbc-service</module>
+        <module>catalog-service</module>
+        <module>authorization-module</module>
+        <module>online-store-web</module>
+        <module>online-store-local-server</module>
     </modules>
 </project>
