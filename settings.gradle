@@ -1,0 +1,4 @@
+include 'authorization-module/authorization-module-api'
+include 'authorization-module/authorization-module-impl'
+rootProject.name = 'onlinestore'
+
