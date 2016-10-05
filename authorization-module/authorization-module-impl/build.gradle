@@ -1,0 +1,4 @@
+group 'ru.vago.onlinestore'
+version 'next-SNAPSHOT'
+
+apply plugin: 'java'

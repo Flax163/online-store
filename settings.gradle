@@ -1,4 +1,6 @@
-include 'authorization-module/authorization-module-api'
-include 'authorization-module/authorization-module-impl'
+include(':authorization-module-api', ':authorization-module-impl', ':catalog-service-api');
 rootProject.name = 'onlinestore'
 
+project(':authorization-module-api').projectDir = new File(settingsDir, 'authorization-module/authorization-module-api');
+project(':authorization-module-impl').projectDir = new File(settingsDir, 'authorization-module/authorization-module-impl');
+project(':catalog-service-api').projectDir = new File(settingsDir, 'catalog-service/catalog-service-api');
