@@ -1,14 +1,26 @@
-group 'ru.vago.onlinestore'
-version 'next-SNAPSHOT'
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
 
-apply plugin: 'java'
+    ext {
+        javaeeApiVersion = '7.0'
+        guavaVersion = '19.0'
+        jaxRsVersion = '2.0.1'
+        jerseyVersion = '2.23.2'
+        jaxsonVersion = '2.8.1'
+        jsr305Version = '3.0.1'
 
-sourceCompatibility = 1.8
+        javaEnterpriseDependencies = [
+                javaeeApi   : "javax:javaee-api:${javaeeApiVersion}",
+                guava       : "com.google.guava:guava:${guavaVersion}",
+                jaxRs       : "javax.ws.rs:javax.ws.rs-api:${jaxRsVersion}",
+                jerseyContainerServletCore  : "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}",
+                jerseMediaJsonJackson       : "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}",
+                jacksonJaxrsJsonProvide     : "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jaxsonVersion}",
+                findbugs : "com.google.code.findbugs:jsr305:${jsr305Version}"
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+        ];
+    }
 }

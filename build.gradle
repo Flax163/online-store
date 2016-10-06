@@ -1,13 +1,11 @@
+apply from: 'parent/build.gradle'
+
 group 'ru.vago.onlinestore'
 version 'next-SNAPSHOT'
 
 apply plugin: 'java'
+apply from: 'parent/build.gradle'
 
-sourceCompatibility = 1.8
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+allprojects {
+    sourceCompatibility = 1.8
 }

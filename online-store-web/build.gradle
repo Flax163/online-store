@@ -1,0 +1,15 @@
+group 'ru.vago.onlinestore.local.server'
+version 'next-SNAPSHOT'
+
+apply plugin: 'war'
+
+dependencies {
+    compile project(':catalog-service-api')
+    compile project(':catalog-service-impl')
+    compile rootProject.ext.javaEnterpriseDependencies.guava
+    compile rootProject.ext.javaEnterpriseDependencies.jaxRs
+    compile rootProject.ext.javaEnterpriseDependencies.jerseyContainerServletCore
+    compile rootProject.ext.javaEnterpriseDependencies.jerseMediaJsonJackson
+    compile rootProject.ext.javaEnterpriseDependencies.jacksonJaxrsJsonProvide
+    compile rootProject.ext.javaEnterpriseDependencies.findbugs
+}

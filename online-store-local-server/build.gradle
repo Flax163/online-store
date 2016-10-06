@@ -1,0 +1,9 @@
+group 'ru.vago.onlinestore.local.server'
+version 'next-SNAPSHOT'
+
+apply plugin: 'war'
+
+dependencies {
+    compile project(':catalog-service-api')
+    compile rootProject.ext.javaEnterpriseDependencies.guava
+}

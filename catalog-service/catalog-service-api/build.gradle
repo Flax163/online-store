@@ -1,12 +1,8 @@
-group 'ru.vago.onlinestore'
+group 'ru.vago.onlinestore.catalog.service'
 version 'next-SNAPSHOT'
 
 apply plugin: 'java'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    compile group: 'javax', name: 'javaee-api', version: '7.0'
+    compile rootProject.ext.javaEnterpriseDependencies.javaeeApi
 }

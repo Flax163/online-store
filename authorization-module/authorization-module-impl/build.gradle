@@ -1,4 +1,4 @@
-group 'ru.vago.onlinestore'
+group 'ru.vago.onlinestore.authorization.module'
 version 'next-SNAPSHOT'
 
 apply plugin: 'java'
