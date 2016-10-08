@@ -4,3 +4,7 @@
 /web/src/main/frontend/bower_components
 /web/src/main/frontend/node_modules
 dist
+.idea
+target
+bower_components
+node_modules
