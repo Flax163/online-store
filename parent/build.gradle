@@ -11,6 +11,7 @@ allprojects {
         jerseyVersion = '2.23.2'
         jaxsonVersion = '2.8.1'
         jsr305Version = '3.0.1'
+        junitVersion = '4.12';
 
         javaEnterpriseDependencies = [
                 javaeeApi   : "javax:javaee-api:${javaeeApiVersion}",
@@ -19,8 +20,12 @@ allprojects {
                 jerseyContainerServletCore  : "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}",
                 jerseMediaJsonJackson       : "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}",
                 jacksonJaxrsJsonProvide     : "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jaxsonVersion}",
-                findbugs : "com.google.code.findbugs:jsr305:${jsr305Version}"
+                findbugs    : "com.google.code.findbugs:jsr305:${jsr305Version}"
 
+        ];
+
+        testDependencies = [
+                junit       : "junit:junit:${junitVersion}"
         ];
     }
 }

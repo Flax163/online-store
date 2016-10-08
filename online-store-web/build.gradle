@@ -12,4 +12,6 @@ dependencies {
     compile rootProject.ext.javaEnterpriseDependencies.jerseMediaJsonJackson
     compile rootProject.ext.javaEnterpriseDependencies.jacksonJaxrsJsonProvide
     compile rootProject.ext.javaEnterpriseDependencies.findbugs
+
+    testCompile rootProject.ext.testDependencies.junit
 }
