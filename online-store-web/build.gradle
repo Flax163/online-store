@@ -1,6 +1,20 @@
 group 'ru.vago.onlinestore.local.server'
 version 'next-SNAPSHOT'
 
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.moowork.gradle:gradle-node-plugin:0.12'
+        classpath 'com.moowork.gradle:gradle-gulp-plugin:0.13'
+    }
+}
+
+apply plugin: "com.moowork.node"
+apply plugin: 'com.moowork.gulp'
 apply plugin: 'war'
 
 dependencies {
@@ -14,4 +28,23 @@ dependencies {
     compile rootProject.ext.javaEnterpriseDependencies.findbugs
 
     testCompile rootProject.ext.testDependencies.junit
+}
+
+node {
+    version = '5.8.0'
+    npmVersion = '3.8.0'
+    distBaseUrl = 'https://nodejs.org/dist'
+
+    download = true
+
+    workDir = file("${project.projectDir}/src/main/frontend")
+    nodeModulesDir = file("${project.projectDir}/src/main/frontend")
+}
+
+gulp {
+    workDir = file("${project.projectDir}/src/main/frontend")
+}
+
+task gulpBuild(type: GulpTask) {
+    args = ["build"]
 }
