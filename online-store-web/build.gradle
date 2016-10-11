@@ -48,3 +48,14 @@ gulp {
 task gulpBuild(type: GulpTask) {
     args = ["build"]
 }
+
+task buildFrontEnd(dependsOn: 'npmInstall') {
+    doFirst{
+        nodeSetup.execute()
+        npmSetup.execute()
+    }
+
+    doLast {
+        gulpBuild.execute()
+    }
+}

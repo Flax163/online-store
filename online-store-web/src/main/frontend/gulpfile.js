@@ -80,7 +80,7 @@ gulp.task('copy-resources', function() {
         .pipe(gulp.dest('./dist/resources'));
 });
 
-gulp.task('copy-in-web', function(){
+gulp.task('copy-in-web', ['copy-fonts', 'copy-resources', 'js-libs', 'js', 'start-page', 'css-libs'], function() {
     const files = [
         'dist/**/*'
     ];
