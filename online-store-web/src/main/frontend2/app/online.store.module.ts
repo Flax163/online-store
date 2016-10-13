@@ -7,6 +7,8 @@ import { routing } from './app.routing';
 import { OnlineStoreComponent } from './online.store.component';
 
 import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { TopMenuComponent } from "./component/topMenu/top.menu.component";
+import { SignInComponent } from './component/dialog/sign.in.component.ts/sign.in.component'
 
 @NgModule({
     imports: [
@@ -15,7 +17,11 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
         HttpModule,
         routing
     ],
-    declarations: [OnlineStoreComponent],
+    declarations: [
+        OnlineStoreComponent,
+        TopMenuComponent,
+        SignInComponent
+    ],
     providers : [
         CookieService
     ],
