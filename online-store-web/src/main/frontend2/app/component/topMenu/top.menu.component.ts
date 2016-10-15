@@ -7,5 +7,4 @@ import { Component, OnInit} from '@angular/core';
 export class TopMenuComponent implements OnInit {
     ngOnInit():void {
     }
-
 }
