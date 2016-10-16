@@ -12,6 +12,8 @@ import { SignInComponent } from './component/dialog/sign.in.component.ts/sign.in
 import { CartComponent } from './component/cart/cart.component'
 import { AboutComponent } from './component/about/about.component'
 import { WelcomeComponent } from "./component/welcome/welcome.component";
+import { DetailOfferComponent } from "./component/detailOffer/detail.offer.component";
+import { ListOfferComponent } from "./component/listOffer/list.offer.component";
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import { WelcomeComponent } from "./component/welcome/welcome.component";
         SignInComponent,
         CartComponent,
         AboutComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        DetailOfferComponent,
+        ListOfferComponent
     ],
     providers : [
         CookieService
