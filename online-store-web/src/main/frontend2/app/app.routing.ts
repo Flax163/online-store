@@ -8,7 +8,6 @@ import { WelcomeComponent } from "./component/welcome/welcome.component";
 const appRoutes: Routes = [
     {path: 'cart', component: CartComponent},
     {path: 'about', component: AboutComponent},
-    {path: 'welcome', component: WelcomeComponent},
     {path: '', component:WelcomeComponent}
 ];
 
