@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 import { AuthDto } from "../dto/auth.dto.ts";
+import {TokenDto} from "../dto/token.dto";
 
 @Injectable()
 export class AuthorizationService {
@@ -19,8 +20,8 @@ export class AuthorizationService {
             .catch(error)
     }
 
-    verifyToken(token:string, success:Function, error:any):Promise<void> {
-        return this.http.post(this.VERIFY_TOKEN_URL, token)
+    verifyToken(tokenDto:TokenDto, success:Function, error:any):Promise<void> {
+        return this.http.post(this.VERIFY_TOKEN_URL, tokenDto)
             .toPromise()
             .then(success)
             .catch(error);

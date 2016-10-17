@@ -28,6 +28,16 @@ app.post('/rest/authorization', function(req, res) {
         }
 });
 
+app.post('/rest/verifyToken', function(req, res) {
+    const token = req.body.token;
+    if (token === 'any token') {
+        res.send();
+    } else {
+        res.statusCode = 401;
+        res.send();
+    }
+});
+
 app.listen(8080, function () {
     console.log('Server Start port 8080');
 });

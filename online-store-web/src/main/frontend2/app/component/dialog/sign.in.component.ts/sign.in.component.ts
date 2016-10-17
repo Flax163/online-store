@@ -28,14 +28,15 @@ export class SignInComponent implements OnInit {
     authorization() {
         this.authorizationService.authorization(this.authModel,
             responce => {
+                let token:string = responce.json().token;
                 this.authMessage = '';
-                this.metadata.token = responce.json().token;
+                this.metadata.authorization(token);
                 if(this.rememberUser) {
-                    this.cookieService.put('token', this.metadata.token);
+                    this.cookieService.put('token', token);
                 }
                 $('#signInDialog').modal("hide");
             },
-            error => {
+            () => {
                 this.authMessage = 'Не удалось авторизоваться';
             }
         );

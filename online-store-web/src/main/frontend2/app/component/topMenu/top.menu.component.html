@@ -17,9 +17,9 @@
                     <li><a routerLink="/about">О нас</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a routerLink="/cart">Корзина <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+                    <li><a routerLink="/cart">Корзина<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                     <li><a data-target="#signInDialog" data-toggle="modal">Войти <span class="glyphicon glyphicon-log-in"></span></a></li>
-                    <li><a>Выйти <span class="glyphicon glyphicon-log-out"></span></a></li>
+                    <li (click)="unAuthorization()"><a>Выйти <span class="glyphicon glyphicon-log-out"></span></a></li>
                     <li><a>Регистрация</a></li>
                 </ul>
             </div>
