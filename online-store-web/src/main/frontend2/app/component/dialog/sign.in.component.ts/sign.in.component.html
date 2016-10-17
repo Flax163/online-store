@@ -6,18 +6,18 @@
                 <h4 class="modal-title" id="myModalLabel">Войти в онлайн магазин</h4>
             </div>
             <div class="modal-body">
-                <label></label>
-                <input type="text" title="login" class="form-control" placeholder="Username">
-                <input type="password" title="password" class="form-control" placeholder="Password">
+                <label>{{authMessage}}</label>
+                <input [(ngModel)]="authModel.login" type="text" title="login" class="form-control" placeholder="Username">
+                <input [(ngModel)]="authModel.password"type="password" title="password" class="form-control" placeholder="Password">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" value="Запомнить меня">Запомнить меня
+                        <input [(ngModel)]="rememberUser" type="checkbox" value="Запомнить меня">Запомнить меня
                     </label>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-                <button type="button" class="btn btn-primary">Войти</button>
+                <button (click)="authorization()" type="button" class="btn btn-primary">Войти</button>
             </div>
         </div>
     </div>

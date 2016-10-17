@@ -13,6 +13,21 @@ var compiler = webpack(webpackDevConfig);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: '/'}));
 app.use(webpackHotMiddleware(compiler));
 
+app.post('/rest/authorization', function(req, res) {
+        const login = req.body.login;
+        const password = req.body.password;
+        var token;
+        if (login === 'vago' && password === '123') {
+            token = 'any token';
+        }
+        if (token === undefined) {
+            res.statusCode = 401;
+            res.send();
+        } else {
+            res.send({token: token});
+        }
+});
+
 app.listen(8080, function () {
     console.log('Server Start port 8080');
 });
