@@ -36,9 +36,8 @@ export class SignInComponent implements OnInit {
                 }
                 $('#signInDialog').modal("hide");
             },
-            () => {
-                this.authMessage = 'Не удалось авторизоваться';
-            }
-        );
+            () => this.authMessage = 'Не удалось авторизоваться'
+
+)
     }
 }

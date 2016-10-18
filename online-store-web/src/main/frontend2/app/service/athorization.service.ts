@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 import { AuthDto } from "../dto/auth.dto.ts";
-import {TokenDto} from "../dto/token.dto";
+import { TokenDto } from "../dto/token.dto";
 
 @Injectable()
 export class AuthorizationService {

@@ -9,8 +9,8 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Категории<b class="caret"></b></a>
                         <ul class="dropdown-menu" >
-                            <li>
-                                <a></a>
+                            <li *ngFor="let category of categories">
+                                <a>{{category.name}}</a>
                             </li>
                         </ul>
                     </li>

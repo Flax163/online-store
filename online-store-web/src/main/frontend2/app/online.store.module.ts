@@ -16,6 +16,7 @@ import { DetailOfferComponent } from "./component/detailOffer/detail.offer.compo
 import { ListOfferComponent } from "./component/listOffer/list.offer.component";
 import { AuthorizationService } from "./service/athorization.service";
 import { Metadata } from "./model/metadata.model";
+import {CategoryService} from "./service/category.service";
 
 @NgModule({
     imports: [
@@ -37,6 +38,7 @@ import { Metadata } from "./model/metadata.model";
     providers : [
         CookieService,
         AuthorizationService,
+        CategoryService,
         Metadata
     ],
     bootstrap: [OnlineStoreComponent]

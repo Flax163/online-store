@@ -38,6 +38,18 @@ app.post('/rest/verifyToken', function(req, res) {
     }
 });
 
+app.get('/rest/category', function (req, res) {
+    const catalogs = [{
+        id: 1,
+        name: 'category 1'
+    },
+        {
+            id: 2,
+            name: 'category 2'
+        }];
+    res.json(catalogs);
+});
+
 app.listen(8080, function () {
     console.log('Server Start port 8080');
 });
