@@ -1,23 +1,23 @@
 export class Metadata {
     private token:string;
-    private authorization:boolean;
+    private authStatus:boolean;
 
-    public authorization(token:string):void {
+    authorization(token:string) {
         this.token = token;
-        this.authorization = true;
+        this.authStatus = true;
     }
 
-    public unAuthorization():void {
+    unAuthorization() {
         this.token = '';
-        this.authorization = false;
+        this.authStatus = false;
     }
 
-    public getToken():string {
+    getToken():string {
         return this.token;
     }
 
-    public isAuthorization():boolean {
-        return this.authorization;
+    isAuthorization():boolean {
+        return this.authStatus;
     }
 
 }

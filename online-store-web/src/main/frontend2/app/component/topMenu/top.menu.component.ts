@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import {Metadata} from "../../model/metadata.model";
-import {CookieService} from "angular2-cookie/core";
+import { Metadata } from "../../model/metadata.model";
+import { CookieService } from "angular2-cookie/core";
 
 @Component({
     selector: 'top-menu',
@@ -16,6 +16,5 @@ export class TopMenuComponent implements OnInit {
 
     unAuthorization():void {
         this.metadata.unAuthorization();
-        this.cookiesService.remove('token')
     }
 }

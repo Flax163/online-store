@@ -23,8 +23,8 @@ export class OnlineStoreComponent implements OnInit {
                     this.metadata.authorization(token);
                 },
                 () => {
-                    this.cookieService.remove('token');
                     this.metadata.unAuthorization();
+                    this.cookieService.remove('token');
                 });
         }
     }
