@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorizationService } from "../../../service/athorization.service";
-import { AuthDto } from "../../../dto/auth.dto.ts";
+import { AuthDto } from "../../../dto/auth.ts";
 import { Metadata } from "../../../model/metadata.model";
 import { CookieService } from "angular2-cookie/core";
 declare var $:any;

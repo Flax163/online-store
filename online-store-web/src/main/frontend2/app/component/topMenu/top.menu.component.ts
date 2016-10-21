@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Metadata } from "../../model/metadata.model";
 import { CategoryService } from "../../service/category.service";
-import { Category } from "../../dto/category.dto";
+import { Category } from "../../dto/category.ts";
 import { CookieService } from "angular2-cookie/core";
 
 @Component({

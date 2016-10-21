@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Category } from "../dto/category.dto";
+import { Category } from "../dto/category.ts";
 import { BaseServiceJson } from "./base.service.json";
 
 @Injectable()

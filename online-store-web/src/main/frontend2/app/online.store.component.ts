@@ -3,7 +3,7 @@ import { Metadata } from "./model/metadata.model";
 import { CookieService } from "angular2-cookie/core";
 import { AuthorizationService } from "./service/athorization.service";
 import { isNullOrUndefined } from "util";
-import { TokenDto } from "./dto/token.dto";
+import { TokenDto } from "./dto/token.ts";
 
 @Component({
     selector: 'online-store',

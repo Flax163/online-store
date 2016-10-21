@@ -2,8 +2,8 @@ import { Headers, Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
-import { AuthDto } from "../dto/auth.dto.ts";
-import { TokenDto } from "../dto/token.dto";
+import { AuthDto } from "../dto/auth.ts";
+import { TokenDto } from "../dto/token.ts";
 import { BaseServiceJson } from "./base.service.json";
 
 @Injectable()
