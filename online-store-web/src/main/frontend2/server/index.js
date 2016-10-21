@@ -31,7 +31,7 @@ app.post('/rest/authorization', function(req, res) {
 app.post('/rest/verifyToken', function(req, res) {
     const token = req.body.token;
     if (token === 'any token') {
-        res.send();
+        res.send({token: 'any token2'});
     } else {
         res.statusCode = 401;
         res.send();

@@ -3,7 +3,7 @@ import { Metadata } from "./model/metadata.model";
 import { CookieService } from "angular2-cookie/core";
 import { AuthorizationService } from "./service/athorization.service";
 import { isNullOrUndefined } from "util";
-import {TokenDto} from "./dto/token.dto";
+import { TokenDto } from "./dto/token.dto";
 
 @Component({
     selector: 'online-store',
@@ -18,11 +18,11 @@ export class OnlineStoreComponent implements OnInit {
     ngOnInit():void {
         let token:string = this.cookieService.get('token');
         if (!isNullOrUndefined(token)) {
-            this.authorizationService.verifyToken(new TokenDto(token),
-                () => {
+            this.authorizationService.verifyToken(new TokenDto(token))
+                .then(() => {
                     this.metadata.authorization(token);
-                },
-                () => {
+                })
+                .catch(() => {
                     this.metadata.unAuthorization();
                     this.cookieService.remove('token');
                 });

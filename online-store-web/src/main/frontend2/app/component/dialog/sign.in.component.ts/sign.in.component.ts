@@ -3,7 +3,7 @@ import { AuthorizationService } from "../../../service/athorization.service";
 import { AuthDto } from "../../../dto/auth.dto.ts";
 import { Metadata } from "../../../model/metadata.model";
 import { CookieService } from "angular2-cookie/core";
-declare var $;
+declare var $:any;
 
 @Component({
     selector: 'sign-in-dialog',
@@ -26,18 +26,18 @@ export class SignInComponent implements OnInit {
     }
 
     authorization() {
-        this.authorizationService.authorization(this.authModel,
-            responce => {
-                let token:string = responce.json().token;
+        this.authorizationService.authorization(this.authModel)
+            .then(tokenDto => {
+                let token:string = tokenDto.token;
                 this.authMessage = '';
                 this.metadata.authorization(token);
                 if(this.rememberUser) {
                     this.cookieService.put('token', token);
                 }
                 $('#signInDialog').modal("hide");
-            },
-            () => this.authMessage = 'Не удалось авторизоваться'
-
-)
+            })
+            .catch(
+                () => this.authMessage = 'Не удалось авторизоваться'
+            );
     }
 }
