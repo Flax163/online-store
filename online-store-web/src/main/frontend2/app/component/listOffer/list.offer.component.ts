@@ -11,16 +11,15 @@ import { OfferDto } from "../../dto/offer";
 })
 export class ListOfferComponent implements OnInit {
     private offers:OfferDto[];
-    private categoryId:number;
 
     constructor(private offerService:OfferService,
-                private route: ActivatedRoute) {
+                private route:ActivatedRoute) {
     }
 
     ngOnInit():void {
         this.route.params.subscribe(params => {
-            this.categoryId = +params['id'];
+            this.offerService.loadOffersFromCategory(params['id'])
+                .then(offers => this.offers = offers as OfferDto[])
         });
-        alert(this.categoryId);
     }
 }
