@@ -1,6 +1,5 @@
 include(':authorization-module-api', ':authorization-module-impl', ':catalog-service-api',
-    ':catalog-service-impl', ':catalog-service-in-memory', ':jdbc-service',
-    ':online-store-local-server', ':online-store-web');
+    ':catalog-service-impl', ':catalog-service-in-memory', ':online-store-web');
 rootProject.name = 'onlinestore'
 
 project(':authorization-module-api').projectDir = new File(settingsDir, 'authorization-module/authorization-module-api');
@@ -8,6 +7,4 @@ project(':authorization-module-impl').projectDir = new File(settingsDir, 'author
 project(':catalog-service-api').projectDir = new File(settingsDir, 'catalog-service/catalog-service-api');
 project(':catalog-service-impl').projectDir = new File(settingsDir, 'catalog-service/catalog-service-impl');
 project(':catalog-service-in-memory').projectDir = new File(settingsDir, 'catalog-service/catalog-service-in-memory');
-project(':jdbc-service').projectDir = new File(settingsDir, 'jdbc-service');
-project(':online-store-local-server').projectDir = new File(settingsDir, 'online-store-local-server');
 project(':online-store-web').projectDir = new File(settingsDir, 'online-store-web');

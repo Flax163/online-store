@@ -1,4 +1,0 @@
-group 'ru.vago.onlinestore.jdbc.service'
-version 'next-SNAPSHOT'
-
-apply plugin: 'java'

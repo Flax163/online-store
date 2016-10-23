@@ -9,15 +9,6 @@ gulp.task('copy-in-production', function() {
         .pipe(gulp.dest('../webapp'));
 });
 
-//TODO: hack need use webpack
-gulp.task('copy-resources', function() {
-    const resources = [
-        'resources/**/*'
-    ];
-    return gulp.src(resources)
-        .pipe(gulp.dest('../webapp'));
-});
-
-gulp.task('build', ['copy-in-production', 'copy-resources']);
+gulp.task('build', ['copy-in-production']);
 
 gulp.task('default', ['build']);
