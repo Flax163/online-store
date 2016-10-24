@@ -1,4 +1,4 @@
-package org.vago.onlinestore.catalog.model;
+package ru.vago.authorization.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,9 +18,6 @@ public class User implements Serializable
 
     @Column(name = "USER_PASSWORD", length = 100, nullable = false)
     private String password;
-
-    @Column(name = "USER_EMAIL", length = 100, nullable = false)
-    private String email;
 
     public BigInteger getId()
     {
@@ -45,15 +42,5 @@ public class User implements Serializable
     public void setPassword(String password)
     {
         this.password = password;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
     }
 }

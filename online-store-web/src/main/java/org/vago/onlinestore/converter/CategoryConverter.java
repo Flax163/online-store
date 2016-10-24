@@ -2,8 +2,8 @@ package org.vago.onlinestore.converter;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import org.vago.onlinestore.catalog.model.CategoryOffer;
-import org.vago.onlinestore.catalog.model.Offer;
+import org.vago.catalog.entity.Category;
+import org.vago.catalog.entity.Offer;
 import org.vago.onlinestore.dto.CategoryDto;
 import org.vago.onlinestore.dto.FactoryDto;
 import org.vago.onlinestore.dto.OfferDto;
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import java.math.BigInteger;
 import java.util.List;
 
-public class CategoryConverter implements Converter<CategoryDto, CategoryOffer>
+public class CategoryConverter implements Converter<CategoryDto, Category>
 {
     private final OfferConverter offerConverter;
 
@@ -23,11 +23,11 @@ public class CategoryConverter implements Converter<CategoryDto, CategoryOffer>
     }
 
     @Override
-    public CategoryDto convert(CategoryOffer categoryOffer)
+    public CategoryDto convert(Category category)
     {
-        BigInteger id = categoryOffer.getId();
-        String name = categoryOffer.getName();
-        List<OfferDto> offers = Lists.transform(categoryOffer.getOffers(), new Function<Offer, OfferDto>()
+        BigInteger id = category.getId();
+        String name = category.getName();
+        List<OfferDto> offers = Lists.transform(category.getOffers(), new Function<Offer, OfferDto>()
         {
             @Override
             public OfferDto apply(Offer offer)

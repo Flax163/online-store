@@ -1,4 +1,8 @@
-group 'ru.vago.onlinestore.authorization.module'
+group 'ru.vago.module.authorization'
 version 'next-SNAPSHOT'
 
 apply plugin: 'java'
+
+dependencies{
+    compile rootProject.ext.javaEnterpriseDependencies.javaeeApi
+}

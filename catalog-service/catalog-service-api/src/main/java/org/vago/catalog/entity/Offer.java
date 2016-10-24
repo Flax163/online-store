@@ -1,4 +1,4 @@
-package org.vago.onlinestore.catalog.model;
+package org.vago.catalog.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -24,17 +24,17 @@ public class Offer implements Serializable
 
     @ManyToOne
     @JoinColumn(name = "CATEGORIES_OFFER_ID", referencedColumnName = "CATEGORIE_ID")
-    private CategoryOffer categoryOffer;
+    private Category category;
 
     public Offer() {}
 
-    public Offer(BigInteger id, String name, String description, double price, CategoryOffer categoryOffer)
+    public Offer(BigInteger id, String name, String description, double price, Category category)
     {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.categoryOffer = categoryOffer;
+        this.category = category;
     }
 
     public BigInteger getId()

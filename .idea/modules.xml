@@ -9,9 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service-api/catalog-service-api.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service-api/catalog-service-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service-impl/catalog-service-impl.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service-impl/catalog-service-impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/catalog-service/catalog-service-in-memory/catalog-service-in-memory.iml" filepath="$PROJECT_DIR$/catalog-service/catalog-service-in-memory/catalog-service-in-memory.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-service/jdbc-service.iml" filepath="$PROJECT_DIR$/jdbc-service/jdbc-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/online-store.iml" filepath="$PROJECT_DIR$/online-store.iml" />
-      <module fileurl="file://$PROJECT_DIR$/online-store-local-server/online-store-local-server.iml" filepath="$PROJECT_DIR$/online-store-local-server/online-store-local-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/online-store-web/online-store-web.iml" filepath="$PROJECT_DIR$/online-store-web/online-store-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/onlinestore.iml" filepath="$PROJECT_DIR$/onlinestore.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent/parent.iml" filepath="$PROJECT_DIR$/parent/parent.iml" />

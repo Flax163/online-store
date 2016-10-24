@@ -1,6 +1,6 @@
 package org.vago.onlinestore.converter;
 
-import org.vago.onlinestore.catalog.model.Offer;
+import org.vago.catalog.entity.Offer;
 import org.vago.onlinestore.dto.FactoryDto;
 import org.vago.onlinestore.dto.OfferDto;
 

@@ -1,4 +1,4 @@
-package org.vago.onlinestore.catalog.model;
+package org.vago.catalog.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -7,22 +7,22 @@ import java.util.List;
 
 @Entity
 @Table(name = "CATEGORIES")
-public class CategoryOffer implements Serializable
+public class Category implements Serializable
 {
     @Id
     @GeneratedValue
-    @Column(name = "CATEGORIE_ID")
+    @Column(name = "ID_CATEGORY")
     private BigInteger id;
 
-    @Column(name = "CATEGORIE_NAME", length = 100, nullable = false)
+    @Column(name = "NAME_CATEGORY", length = 100, nullable = false)
     private String name;
 
     @OneToMany(mappedBy = "categoryOffer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Offer> offers;
 
-    public CategoryOffer() {}
+    public Category() {}
 
-    public CategoryOffer(BigInteger id, String name, List<Offer> offers)
+    public Category(BigInteger id, String name, List<Offer> offers)
     {
         this.id = id;
         this.name = name;
@@ -32,6 +32,11 @@ public class CategoryOffer implements Serializable
     public BigInteger getId()
     {
         return id;
+    }
+
+    public void setId(BigInteger id)
+    {
+        this.id = id;
     }
 
     public String getName()

@@ -18,7 +18,7 @@ apply plugin: 'com.moowork.gulp'
 apply plugin: 'war'
 
 dependencies {
-    compile project(':catalog-service-api')
+    compile project(':catalog-service')
     compile project(':catalog-service-impl')
     compile rootProject.ext.javaEnterpriseDependencies.guava
     compile rootProject.ext.javaEnterpriseDependencies.jaxRs

@@ -1,6 +1,6 @@
-package org.vago.onlinestore.catalog.service;
+package org.vago.catalog.service;
 
-import org.vago.onlinestore.catalog.model.Offer;
+import org.vago.catalog.entity.Offer;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

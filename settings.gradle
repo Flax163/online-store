@@ -1,10 +1,10 @@
-include(':authorization-module-api', ':authorization-module-impl', ':catalog-service-api',
+include(':authorization-module', ':authorization-module-impl', ':catalog-service',
     ':catalog-service-impl', ':catalog-service-in-memory', ':online-store-web');
 rootProject.name = 'onlinestore'
 
-project(':authorization-module-api').projectDir = new File(settingsDir, 'authorization-module/authorization-module-api');
+project(':authorization-module').projectDir = new File(settingsDir, 'authorization-module/authorization-module-api');
 project(':authorization-module-impl').projectDir = new File(settingsDir, 'authorization-module/authorization-module-impl');
-project(':catalog-service-api').projectDir = new File(settingsDir, 'catalog-service/catalog-service-api');
+project(':catalog-service').projectDir = new File(settingsDir, 'catalog-service/catalog-service-api');
 project(':catalog-service-impl').projectDir = new File(settingsDir, 'catalog-service/catalog-service-impl');
 project(':catalog-service-in-memory').projectDir = new File(settingsDir, 'catalog-service/catalog-service-in-memory');
 project(':online-store-web').projectDir = new File(settingsDir, 'online-store-web');

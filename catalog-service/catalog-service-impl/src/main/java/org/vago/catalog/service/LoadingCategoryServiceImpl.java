@@ -1,7 +1,7 @@
-package org.vago.onlinestore.catalog.service;
+package org.vago.catalog.service;
 
-import org.vago.onlinestore.catalog.ConstantsQuery;
-import org.vago.onlinestore.catalog.model.CategoryOffer;
+import org.vago.catalog.entity.Category;
+import org.vago.catalog.ConstantsQuery;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,16 +16,16 @@ public class LoadingCategoryServiceImpl implements LoadingCategoryService
     EntityManager entityManager;
 
     @Override
-    public List<CategoryOffer> loadAllCategories()
+    public List<Category> loadAllCategories()
     {
         return entityManager
-                .createQuery(ConstantsQuery.SELECT_ALL_CATEGORY_QUERY, CategoryOffer.class)
+                .createQuery(ConstantsQuery.SELECT_ALL_CATEGORY_QUERY, Category.class)
                 .getResultList();
     }
 
     @Override
-    public CategoryOffer loadCategory(BigInteger id)
+    public Category loadCategory(BigInteger id)
     {
-        return entityManager.find(CategoryOffer.class, id);
+        return entityManager.find(Category.class, id);
     }
 }

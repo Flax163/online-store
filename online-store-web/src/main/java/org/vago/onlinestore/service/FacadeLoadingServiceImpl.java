@@ -2,9 +2,9 @@ package org.vago.onlinestore.service;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
-import org.vago.onlinestore.catalog.model.CategoryOffer;
-import org.vago.onlinestore.catalog.service.LoadingCategoryService;
-import org.vago.onlinestore.catalog.service.LoadingOfferService;
+import org.vago.catalog.entity.Category;
+import org.vago.catalog.service.LoadingCategoryService;
+import org.vago.catalog.service.LoadingOfferService;
 import org.vago.onlinestore.converter.CategoryConverter;
 import org.vago.onlinestore.converter.OfferConverter;
 import org.vago.onlinestore.dto.CategoryDto;
@@ -36,10 +36,10 @@ public class FacadeLoadingServiceImpl implements FacadeLoadingService
     @Override
     public List<CategoryDto> loadAllCategories()
     {
-        return Lists.transform(loadingCategoryService.loadAllCategories(), new Function<CategoryOffer, CategoryDto>()
+        return Lists.transform(loadingCategoryService.loadAllCategories(), new Function<Category, CategoryDto>()
         {
             @Override
-            public CategoryDto apply(CategoryOffer category)
+            public CategoryDto apply(Category category)
             {
                 return categoryConverter.convert(category);
             }
