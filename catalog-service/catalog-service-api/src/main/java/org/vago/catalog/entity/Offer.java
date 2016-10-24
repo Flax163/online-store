@@ -10,20 +10,20 @@ public class Offer implements Serializable
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OFFER_ID")
+    @Column(name = "ID_OFFER")
     private BigInteger id;
 
-    @Column(name = "OFFER_NAME", length = 100, nullable = false)
+    @Column(name = "NAME_OFFER", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "OFFER_DESCRIPTION", length = 100)
+    @Column(name = "DESCRIPTION_OFFER", length = 100)
     private String description;
 
-    @Column(name = "OFFER_PRICE")
+    @Column(name = "PRICE_OFFER")
     private double price;
 
     @ManyToOne
-    @JoinColumn(name = "CATEGORIES_OFFER_ID", referencedColumnName = "CATEGORIE_ID")
+    @JoinColumn(name = "ID_CATEGORY", referencedColumnName = "ID_CATEGORY")
     private Category category;
 
     public Offer() {}
@@ -71,5 +71,15 @@ public class Offer implements Serializable
     public void setDescription(String description)
     {
         this.description = description;
+    }
+
+    public Category getCategory()
+    {
+        return category;
+    }
+
+    public void setCategory(Category category)
+    {
+        this.category = category;
     }
 }

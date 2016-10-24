@@ -17,7 +17,10 @@ public class Category implements Serializable
     @Column(name = "NAME_CATEGORY", length = 100, nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "categoryOffer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Column(name = "DESCRIPTION_CATEGORY", length = 100)
+    private String description;
+
+    @OneToMany(mappedBy = "categoryOffer")
     private List<Offer> offers;
 
     public Category() {}
@@ -47,6 +50,16 @@ public class Category implements Serializable
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+
+    public void setDescription(String description)
+    {
+        this.description = description;
     }
 
     public List<Offer> getOffers()
