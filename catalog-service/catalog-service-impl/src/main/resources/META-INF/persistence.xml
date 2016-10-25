@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="jpa-persistence-unit" transaction-type="JTA">
-
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="catalog-service-impl" transaction-type="JTA">
+        <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
     </persistence-unit>
 </persistence>

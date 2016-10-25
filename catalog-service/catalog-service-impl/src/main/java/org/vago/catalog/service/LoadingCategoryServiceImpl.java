@@ -12,7 +12,7 @@ import java.util.List;
 @Stateless
 public class LoadingCategoryServiceImpl implements LoadingCategoryService
 {
-    @PersistenceContext(unitName = "online-store-persistence-unit")
+    @PersistenceContext(unitName = "catalog-service-impl")
     EntityManager entityManager;
 
     @Override
