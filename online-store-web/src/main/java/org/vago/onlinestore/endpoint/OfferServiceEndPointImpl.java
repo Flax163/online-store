@@ -15,11 +15,11 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
 
     public OfferServiceEndPointImpl() {}
 
-    @Inject
+    /*@Inject
     public OfferServiceEndPointImpl(FacadeLoadingService facadeLoadingService)
     {
         this.facadeLoadingService = facadeLoadingService;
-    }
+    }*/
 
     @Nonnull
     @Override

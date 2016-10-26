@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-    <persistence-unit name="catalog-service" transaction-type="JTA">
-        <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+<persistence-unit name="catalog-service">
+    <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
 
-        <properties>
-            <!--<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
-            <!-- TODO: copy past from JEE 7 example
-            <property name="javax.persistence.schema-generation.create-source" value="script"/>
-            <property name="javax.persistence.schema-generation.drop-source" value="script"/>-->
-            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create.sql"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load.sql"/>
-        </properties>
-    </persistence-unit>
+    <properties>
+        <!-- TODO: copy past from JEE 7 example
+        <property name="javax.persistence.schema-generation.create-source" value="script"/>
+        <property name="javax.persistence.schema-generation.drop-source" value="script"/>-->
+        <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create.sql"/>
+        <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load.sql"/>
+    </properties>
+</persistence-unit>
 </persistence>

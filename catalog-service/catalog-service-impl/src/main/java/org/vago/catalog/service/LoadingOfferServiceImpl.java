@@ -10,7 +10,7 @@ import java.math.BigInteger;
 @Stateless
 public class LoadingOfferServiceImpl implements LoadingOfferService
 {
-    @PersistenceContext(unitName = "catalog-service-impl")
+    @PersistenceContext(unitName = "CatalogService")
     EntityManager entityManager;
  
     @Override

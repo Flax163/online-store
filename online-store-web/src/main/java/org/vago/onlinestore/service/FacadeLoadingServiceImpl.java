@@ -16,21 +16,22 @@ import java.util.List;
 
 public class FacadeLoadingServiceImpl implements FacadeLoadingService
 {
-    private final LoadingCategoryService loadingCategoryService;
-    private final LoadingOfferService loadingOfferService;
-    private final CategoryConverter categoryConverter;
-    private final OfferConverter offerConverter;
+    private LoadingCategoryService loadingCategoryService;
+    private LoadingOfferService loadingOfferService;
+    private CategoryConverter categoryConverter;
+    private OfferConverter offerConverter;
 
     @Inject
-    public FacadeLoadingServiceImpl(final LoadingCategoryService loadingCategoryService,
-                                    final LoadingOfferService loadingOfferService,
-                                    final CategoryConverter categoryConverter,
-                                    final OfferConverter offerConverter)
+    public FacadeLoadingServiceImpl(//final LoadingCategoryService loadingCategoryService,
+                                    //final LoadingOfferService loadingOfferService,
+                                    //final CategoryConverter categoryConverter,
+                                    //final OfferConverter offerConverter
+    )
     {
-        this.loadingCategoryService = loadingCategoryService;
-        this.loadingOfferService = loadingOfferService;
-        this.categoryConverter = categoryConverter;
-        this.offerConverter = offerConverter;
+        //this.loadingCategoryService = loadingCategoryService;
+        //this.loadingOfferService = loadingOfferService;
+        //this.categoryConverter = categoryConverter;
+        //this.offerConverter = offerConverter;
     }
 
     @Override
