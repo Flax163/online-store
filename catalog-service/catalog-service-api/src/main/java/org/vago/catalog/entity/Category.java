@@ -20,7 +20,7 @@ public class Category implements Serializable
     @Column(name = "DESCRIPTION_CATEGORY", length = 100)
     private String description;
 
-    @OneToMany(mappedBy = "categoryOffer")
+    @OneToMany(mappedBy = "category")
     private List<Offer> offers;
 
     public Category() {}

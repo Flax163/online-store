@@ -7,9 +7,8 @@
     <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
 
     <properties>
-        <!-- TODO: copy past from JEE 7 example
-        <property name="javax.persistence.schema-generation.create-source" value="script"/>
-        <property name="javax.persistence.schema-generation.drop-source" value="script"/>-->
+        <property name="javax.persistence.schema-generation.database.action" value="create"/>
+
         <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create.sql"/>
         <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load.sql"/>
     </properties>
