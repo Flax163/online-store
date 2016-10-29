@@ -1,7 +1,6 @@
 package org.vago.catalog.service;
 
 import org.vago.catalog.entity.Category;
-import org.vago.catalog.ConstantsQuery;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -19,7 +18,7 @@ public class LoadingCategoryServiceImpl implements LoadingCategoryService
     public List<Category> loadAllCategories()
     {
         return entityManager
-                .createQuery(ConstantsQuery.SELECT_ALL_CATEGORY_QUERY, Category.class)
+                .createQuery("SELECT c FROM Category c", Category.class)
                 .getResultList();
     }
 

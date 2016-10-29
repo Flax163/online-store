@@ -1,8 +1,5 @@
 package org.vago.onlinestore.service;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
-import org.vago.catalog.entity.Category;
 import org.vago.catalog.service.LoadingCategoryService;
 import org.vago.catalog.service.LoadingOfferService;
 import org.vago.onlinestore.converter.CategoryConverter;
@@ -13,6 +10,7 @@ import org.vago.onlinestore.dto.OfferDto;
 import javax.inject.Inject;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FacadeLoadingServiceImpl implements FacadeLoadingService
 {
@@ -22,29 +20,25 @@ public class FacadeLoadingServiceImpl implements FacadeLoadingService
     private OfferConverter offerConverter;
 
     @Inject
-    public FacadeLoadingServiceImpl(//final LoadingCategoryService loadingCategoryService,
-                                    //final LoadingOfferService loadingOfferService,
-                                    //final CategoryConverter categoryConverter,
-                                    //final OfferConverter offerConverter
+    public FacadeLoadingServiceImpl(final LoadingCategoryService loadingCategoryService,
+                                    final LoadingOfferService loadingOfferService,
+                                    final CategoryConverter categoryConverter,
+                                    final OfferConverter offerConverter
     )
     {
-        //this.loadingCategoryService = loadingCategoryService;
-        //this.loadingOfferService = loadingOfferService;
-        //this.categoryConverter = categoryConverter;
-        //this.offerConverter = offerConverter;
+        this.loadingCategoryService = loadingCategoryService;
+        this.loadingOfferService = loadingOfferService;
+        this.categoryConverter = categoryConverter;
+        this.offerConverter = offerConverter;
     }
 
     @Override
     public List<CategoryDto> loadAllCategories()
     {
-        return Lists.transform(loadingCategoryService.loadAllCategories(), new Function<Category, CategoryDto>()
-        {
-            @Override
-            public CategoryDto apply(Category category)
-            {
-                return categoryConverter.convert(category);
-            }
-        });
+        return loadingCategoryService.loadAllCategories()
+                .stream()
+                .map(categoryConverter::convert)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.vago.onlinestore.ServerConstants.*;
 
-@Path(ONLINE_STORE_PATH_END_POINT)
+@Path(ROOT_PATH_END_POINT)
 public interface OfferServiceEndPoint
 {
     @GET

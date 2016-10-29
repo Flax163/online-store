@@ -10,6 +10,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import static org.vago.onlinestore.ServerConstants.*;
+
+@Path(ROOT_PATH_END_POINT)
 public interface AuthorizationEndPoint
 {
     @POST

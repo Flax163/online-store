@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 @Entity
-@Table(name = "CATEGORIES")
+@Table(name = "CATEGORIES", schema = "ONLINE_STORE")
 public class Category implements Serializable
 {
     @Id

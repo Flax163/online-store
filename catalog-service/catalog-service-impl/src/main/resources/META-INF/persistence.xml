@@ -5,5 +5,7 @@
              version="2.1">
     <persistence-unit name="CatalogService">
         <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
+        <class>org.vago.catalog.entity.Category</class>
+        <class>org.vago.catalog.entity.Offer</class>
     </persistence-unit>
 </persistence>
