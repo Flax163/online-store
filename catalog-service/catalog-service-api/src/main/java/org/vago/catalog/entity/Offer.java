@@ -9,7 +9,6 @@ import java.math.BigInteger;
 public class Offer implements Serializable
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_OFFER")
     private BigInteger id;
 

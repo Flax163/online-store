@@ -5,6 +5,7 @@ import org.vago.onlinestore.dto.OfferDto;
 import org.vago.onlinestore.service.FacadeLoadingService;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import java.math.BigInteger;
 import java.util.List;
@@ -21,19 +22,18 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
         this.facadeLoadingService = facadeLoadingService;
     }
 
-    @Nonnull
+    @Nullable
     @Override
-    public OfferDto loadOffer(@Nonnull final BigInteger idCategory,
-                              @Nonnull final BigInteger idOffer)
+    public OfferDto loadOffer(@Nonnull final BigInteger idOffer)
     {
-        return null;
+        return facadeLoadingService.loadOffer(idOffer);
     }
 
-    @Nonnull
+    @Nullable
     @Override
-    public CategoryDto loadCategory(@Nonnull final BigInteger id)
+    public CategoryDto loadCategory(@Nonnull final BigInteger idCategory)
     {
-        return facadeLoadingService.loadCategory(id);
+        return facadeLoadingService.loadCategory(idCategory);
     }
 
     @Nonnull
@@ -41,5 +41,12 @@ public class OfferServiceEndPointImpl implements OfferServiceEndPoint
     public List<CategoryDto> loadCategories()
     {
         return facadeLoadingService.loadAllCategories();
+    }
+
+    @Nonnull
+    @Override
+    public List<OfferDto> loadOffersInCategory(@Nonnull BigInteger idCategory)
+    {
+        return facadeLoadingService.loadOffersInCategory(idCategory);
     }
 }

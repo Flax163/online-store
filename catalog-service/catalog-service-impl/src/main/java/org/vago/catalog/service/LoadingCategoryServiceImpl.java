@@ -2,10 +2,11 @@ package org.vago.catalog.service;
 
 import org.vago.catalog.entity.Category;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -15,8 +16,8 @@ public class LoadingCategoryServiceImpl implements LoadingCategoryService
     @PersistenceContext(unitName = "CatalogService")
     private EntityManager entityManager;
 
+    @Nonnull
     @Override
-    @Transactional
     public List<Category> loadAllCategories()
     {
         return entityManager
@@ -24,8 +25,9 @@ public class LoadingCategoryServiceImpl implements LoadingCategoryService
                 .getResultList();
     }
 
+    @Nullable
     @Override
-    public Category loadCategory(BigInteger id)
+    public Category loadCategory(@Nonnull final BigInteger id)
     {
         return entityManager.find(Category.class, id);
     }

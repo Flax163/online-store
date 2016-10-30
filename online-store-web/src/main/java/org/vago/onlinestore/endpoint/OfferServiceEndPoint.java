@@ -4,6 +4,7 @@ import org.vago.onlinestore.dto.CategoryDto;
 import org.vago.onlinestore.dto.OfferDto;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.math.BigInteger;
@@ -17,19 +18,24 @@ public interface OfferServiceEndPoint
     @GET
     @Path(ONLINE_STORE_PATH_LOAD_OFFER)
     @Produces(MediaType.APPLICATION_JSON)
-    @Nonnull
-    OfferDto loadOffer(@Nonnull @PathParam("category") BigInteger idCategory,
-                       @Nonnull @PathParam("offer")BigInteger idOffer);
+    @Nullable
+    OfferDto loadOffer(@Nonnull @PathParam("offer")BigInteger idOffer);
 
     @GET
     @Path(ONLINE_STORE_PATH_LOAD_CATEGORY)
     @Produces(MediaType.APPLICATION_JSON)
-    @Nonnull
-    CategoryDto loadCategory(@Nonnull @PathParam("category") BigInteger id);
+    @Nullable
+    CategoryDto loadCategory(@Nonnull @PathParam("category") BigInteger idCategory);
 
     @GET
     @Path(ONLINE_STORE_PATH_LOAD_CATEGORIES)
     @Produces(MediaType.APPLICATION_JSON)
     @Nonnull
     List<CategoryDto> loadCategories();
+
+    @GET
+    @Path(ONLINE_STORE_PATH_LOAD_OFFERS_IN_CATEGORY)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Nonnull
+    List<OfferDto> loadOffersInCategory(@Nonnull @PathParam("category") BigInteger idCategory);
 }
