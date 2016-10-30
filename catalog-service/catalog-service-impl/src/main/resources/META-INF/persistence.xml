@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="CatalogService">
+    <persistence-unit name="CatalogService" transaction-type="JTA">
         <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
         <class>org.vago.catalog.entity.Category</class>
         <class>org.vago.catalog.entity.Offer</class>

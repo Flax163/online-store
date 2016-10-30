@@ -5,6 +5,7 @@ import org.vago.catalog.entity.Category;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class LoadingCategoryServiceImpl implements LoadingCategoryService
     private EntityManager entityManager;
 
     @Override
+    @Transactional
     public List<Category> loadAllCategories()
     {
         return entityManager
