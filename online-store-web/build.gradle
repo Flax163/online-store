@@ -19,7 +19,9 @@ apply plugin: 'war'
 
 dependencies {
     compile project(':catalog-service')
+    compile project(':authorization-module')
     compile project(':catalog-service-impl')
+    compile project(':authorization-module-impl')
     compile rootProject.ext.javaEnterpriseDependencies.guava
     compile rootProject.ext.javaEnterpriseDependencies.jaxRs
     compile rootProject.ext.javaEnterpriseDependencies.jerseyContainerServletCore
