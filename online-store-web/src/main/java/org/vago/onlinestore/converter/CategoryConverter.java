@@ -1,6 +1,6 @@
 package org.vago.onlinestore.converter;
 
-import org.vago.catalog.entity.Category;
+import ru.vago.catalog.entity.Category;
 import org.vago.onlinestore.dto.CategoryDto;
 import org.vago.onlinestore.dto.FactoryDto;
 import org.vago.onlinestore.dto.OfferDto;

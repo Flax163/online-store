@@ -1,4 +1,4 @@
-package org.vago.catalog.entity;
+package ru.vago.catalog.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -1,9 +1,9 @@
 package org.vago.onlinestore.service;
 
-import org.vago.catalog.entity.Category;
-import org.vago.catalog.entity.Offer;
-import org.vago.catalog.service.LoadingCategoryService;
-import org.vago.catalog.service.LoadingOfferService;
+import ru.vago.catalog.entity.Category;
+import ru.vago.catalog.entity.Offer;
+import ru.vago.catalog.service.LoadingCategoryService;
+import ru.vago.catalog.service.LoadingOfferService;
 import org.vago.onlinestore.converter.CategoryConverter;
 import org.vago.onlinestore.converter.OfferConverter;
 import org.vago.onlinestore.dto.CategoryDto;

@@ -3,10 +3,11 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-    <persistence-unit name="CatalogService" transaction-type="JTA">
+    <persistence-unit name="AuthorizationModule" transaction-type="JTA">
         <jta-data-source>java:/datasources/OnlineStoreDataSource</jta-data-source>
-        <class>ru.vago.catalog.entity.Category</class>
-        <class>ru.vago.catalog.entity.Offer</class>
+        <class>ru.vago.authorization.entity.Group</class>
+        <class>ru.vago.authorization.entity.User</class>
+        <class>ru.vago.authorization.entity.Role</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="create"/>

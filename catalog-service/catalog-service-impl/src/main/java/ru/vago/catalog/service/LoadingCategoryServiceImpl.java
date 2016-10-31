@@ -1,6 +1,6 @@
-package org.vago.catalog.service;
+package ru.vago.catalog.service;
 
-import org.vago.catalog.entity.Category;
+import ru.vago.catalog.entity.Category;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

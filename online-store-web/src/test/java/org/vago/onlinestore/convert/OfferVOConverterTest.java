@@ -1,7 +1,7 @@
 package org.vago.onlinestore.convert;
 
 import org.junit.Before;
-import org.vago.catalog.entity.Offer;
+import ru.vago.catalog.entity.Offer;
 import org.vago.onlinestore.converter.Converter;
 import org.vago.onlinestore.converter.OfferConverter;
 import org.vago.onlinestore.dto.OfferDto;

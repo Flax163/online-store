@@ -3,6 +3,7 @@ package ru.vago.authorization.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 @Table(name = "USERS")
@@ -10,14 +11,25 @@ public class User implements Serializable
 {
     @Id
     @GeneratedValue
-    @Column(name = "USER_ID")
+    @Column(name = "ID_USER")
     private BigInteger id;
 
-    @Column(name = "USER_LOGIN", length = 100, nullable = false)
+    @Column(name = "LOGIN_USER", length = 100, nullable = false)
     private String login;
 
-    @Column(name = "USER_PASSWORD", length = 100, nullable = false)
+    @Column(name = "PASSWORD_USER", length = 100, nullable = false)
     private String password;
+
+    @ManyToMany
+    @JoinTable(name = "USER_GROUP",
+    joinColumns = @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER"),
+    inverseJoinColumns = @JoinColumn(name = "ID_GROUP", referencedColumnName = "ID_USER"))
+    private List<Group> groups;
+
+    public void setId(BigInteger id)
+    {
+        this.id = id;
+    }
 
     public BigInteger getId()
     {
@@ -42,5 +54,15 @@ public class User implements Serializable
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public List<Group> getGroups()
+    {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups)
+    {
+        this.groups = groups;
     }
 }

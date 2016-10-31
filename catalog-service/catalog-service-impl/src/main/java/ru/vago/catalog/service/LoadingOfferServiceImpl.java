@@ -1,6 +1,6 @@
-package org.vago.catalog.service;
+package ru.vago.catalog.service;
 
-import org.vago.catalog.entity.Offer;
+import ru.vago.catalog.entity.Offer;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -13,7 +13,7 @@ import java.math.BigInteger;
 public class LoadingOfferServiceImpl implements LoadingOfferService
 {
     @PersistenceContext(unitName = "CatalogService")
-    EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Nullable
     @Override
