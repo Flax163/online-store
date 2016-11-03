@@ -13,8 +13,8 @@
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="javax.persistence.schema-generation.create-source" value="script"/>
 
-            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create.sql"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load.sql"/>
+            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create-authorization-module.sql"/>
+            <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load-authorization-module.sql"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -3,9 +3,10 @@ package ru.vago.authorization.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
-@Table(name = "GROUPS")
+@Table(name = "GROUPS", schema = "AUTHORIZATION_MODULE")
 public class Group implements Serializable
 {
     @Id
@@ -15,6 +16,9 @@ public class Group implements Serializable
 
     @Column(name = "NAME_GROUP", length = 50)
     private String name;
+
+    @ManyToMany(mappedBy = "groups")
+    private List<User> users;
 
     public BigInteger getId()
     {

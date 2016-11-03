@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "ROLES")
+@Table(name = "ROLES", schema = "AUTHORIZATION_MODULE")
 public class Role implements Serializable
 {
     @Id

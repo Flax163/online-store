@@ -6,6 +6,7 @@ import ru.vago.authorization.service.AuthorizationService;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 
 @Stateless
 public class AuthorizationServiceImpl implements AuthorizationService

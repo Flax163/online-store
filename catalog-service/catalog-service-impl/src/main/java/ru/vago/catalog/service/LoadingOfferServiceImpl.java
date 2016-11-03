@@ -7,6 +7,7 @@ import javax.annotation.Nullable;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import java.math.BigInteger;
 
 @Stateless

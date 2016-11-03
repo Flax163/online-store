@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "USERS", schema = "AUTHORIZATION_MODULE")
 public class User implements Serializable
 {
     @Id
@@ -20,11 +20,11 @@ public class User implements Serializable
     @Column(name = "PASSWORD_USER", length = 100, nullable = false)
     private String password;
 
-    /*@ManyToMany
+    @ManyToMany
     @JoinTable(name = "USER_GROUP",
     joinColumns = @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER"),
-    inverseJoinColumns = @JoinColumn(name = "ID_GROUP", referencedColumnName = "ID_USER"))
-    private List<Group> groups;*/
+    inverseJoinColumns = @JoinColumn(name = "ID_GROUP", referencedColumnName = "ID_GROUP"))
+    private List<Group> groups;
 
     public void setId(BigInteger id)
     {
@@ -56,7 +56,7 @@ public class User implements Serializable
         this.password = password;
     }
 
-    /*public List<Group> getGroups()
+    public List<Group> getGroups()
     {
         return groups;
     }
@@ -64,5 +64,5 @@ public class User implements Serializable
     public void setGroups(List<Group> groups)
     {
         this.groups = groups;
-    }*/
+    }
 }

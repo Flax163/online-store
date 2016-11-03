@@ -12,8 +12,8 @@
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="javax.persistence.schema-generation.create-source" value="script"/>
 
-            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create.sql"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load.sql"/>
+            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/scripts/create-catalog-service.sql"/>
+            <property name="javax.persistence.sql-load-script-source" value="META-INF/scripts/load-catalog-service.sql"/>
         </properties>
     </persistence-unit>
 </persistence>
