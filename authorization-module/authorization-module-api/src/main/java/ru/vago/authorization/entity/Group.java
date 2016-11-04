@@ -20,6 +20,9 @@ public class Group implements Serializable
     @ManyToMany(mappedBy = "groups")
     private List<User> users;
 
+    @ManyToMany(mappedBy = "groups")
+    private List<Role> roles;
+
     public BigInteger getId()
     {
         return id;
@@ -38,5 +41,25 @@ public class Group implements Serializable
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public List<User> getUsers()
+    {
+        return users;
+    }
+
+    public void setUsers(List<User> users)
+    {
+        this.users = users;
+    }
+
+    public List<Role> getRoles()
+    {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles)
+    {
+        this.roles = roles;
     }
 }

@@ -26,6 +26,12 @@ public class User implements Serializable
     inverseJoinColumns = @JoinColumn(name = "ID_GROUP", referencedColumnName = "ID_GROUP"))
     private List<Group> groups;
 
+    @ManyToMany
+    @JoinTable(name = "USER_ROLE",
+            joinColumns = @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER"),
+            inverseJoinColumns = @JoinColumn(name = "ID_ROLE", referencedColumnName = "ID_ROLE"))
+    private List<Role> roles;
+
     public void setId(BigInteger id)
     {
         this.id = id;
@@ -64,5 +70,15 @@ public class User implements Serializable
     public void setGroups(List<Group> groups)
     {
         this.groups = groups;
+    }
+
+    public List<Role> getRoles()
+    {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles)
+    {
+        this.roles = roles;
     }
 }
