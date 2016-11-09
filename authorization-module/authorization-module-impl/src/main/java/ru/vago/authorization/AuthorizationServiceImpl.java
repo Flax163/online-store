@@ -1,12 +1,13 @@
 package ru.vago.authorization;
 
-import ru.vago.authorization.model.AuthorizationData;
+import ru.vago.authorization.entity.User;
+import ru.vago.authorization.exception.UserNotFoundException;
 import ru.vago.authorization.service.AuthorizationService;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
+import java.util.UUID;
 
 @Stateless
 public class AuthorizationServiceImpl implements AuthorizationService
@@ -15,8 +16,18 @@ public class AuthorizationServiceImpl implements AuthorizationService
     private EntityManager entityManager;
 
     @Override
-    public boolean authorization(AuthorizationData authorizationData)
+    public String createToken(final String login, final String password)
     {
-        return false;
+        User existUser = entityManager.createQuery("SELECT u from User u WHERE u.login = :login AND u.password = :password", User.class)
+                .setParameter("login", login)
+                .setParameter("password", password)
+                .getResultList()
+                .stream()
+                .findFirst()
+                .orElseThrow(UserNotFoundException::new);
+        String generateToken = String.valueOf(UUID.randomUUID());
+        existUser.setToken(generateToken);
+        entityManager.merge(existUser);
+        return generateToken;
     }
 }

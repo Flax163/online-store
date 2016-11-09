@@ -20,6 +20,9 @@ public class User implements Serializable
     @Column(name = "PASSWORD_USER", length = 100, nullable = false)
     private String password;
 
+    @Column(name = "TOKEN_USER", length = 100, nullable = false)
+    private String token;
+
     @ManyToMany
     @JoinTable(name = "USER_GROUP",
     joinColumns = @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER"),
@@ -70,6 +73,16 @@ public class User implements Serializable
     public void setGroups(List<Group> groups)
     {
         this.groups = groups;
+    }
+
+    public String getToken()
+    {
+        return token;
+    }
+
+    public void setToken(String token)
+    {
+        this.token = token;
     }
 
     public List<Role> getRoles()

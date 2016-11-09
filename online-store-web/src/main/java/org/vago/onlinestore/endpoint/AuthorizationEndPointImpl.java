@@ -2,19 +2,32 @@ package org.vago.onlinestore.endpoint;
 
 import org.vago.onlinestore.dto.CredentialDto;
 import org.vago.onlinestore.dto.TokenDto;
+import org.vago.onlinestore.service.AuthorizationFacade;
+
+import javax.inject.Inject;
+import javax.ws.rs.NotSupportedException;
 
 public class AuthorizationEndPointImpl implements AuthorizationEndPoint
 {
-    @Override
-    public TokenDto authorization(CredentialDto credential)
+    private AuthorizationFacade authorizationFacade;
+
+    public AuthorizationEndPointImpl() {}
+
+    @Inject
+    public AuthorizationEndPointImpl(final AuthorizationFacade authorizationFacade)
     {
-        //TODO: implements
-        return null;
+        this.authorizationFacade = authorizationFacade;
     }
 
     @Override
-    public void authorization(TokenDto token)
+    public TokenDto authorization(CredentialDto credential)
     {
-        //TODO: implements
+        return authorizationFacade.authorization(credential);
+    }
+
+    @Override
+    public TokenDto changeToken(TokenDto token)
+    {
+        throw new NotSupportedException();
     }
 }

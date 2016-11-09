@@ -23,5 +23,5 @@ public interface AuthorizationEndPoint
     @PUT
     @Path(ServerConstants.ONLINE_STORE_PATH_CHECK_TOKEN)
     @Produces(MediaType.APPLICATION_JSON)
-    void authorization(TokenDto token);
+    TokenDto changeToken(TokenDto token);
 }
