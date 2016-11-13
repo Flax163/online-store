@@ -9,7 +9,7 @@ import { BaseServiceJson } from "./base.service.json";
 @Injectable()
 export class AuthorizationService extends BaseServiceJson {
     private AUTHORIZATION_URL:string = '/rest/authorization';
-    private VERIFY_TOKEN_URL:string = '/rest/verifyToken';
+    private AUTHORIZATION_BY_TOKEN_URL:string = '/rest/authorizationByToken';
 
     constructor(private http: Http) {
         super();
@@ -22,8 +22,8 @@ export class AuthorizationService extends BaseServiceJson {
             .catch(this.handleError)
     }
 
-    verifyToken(tokenDto:TokenDto):Promise<TokenDto> {
-        return this.http.post(this.VERIFY_TOKEN_URL, tokenDto, this.headers)
+    authorizationByToken(tokenDto:TokenDto):Promise<TokenDto> {
+        return this.http.post(this.AUTHORIZATION_BY_TOKEN_URL, tokenDto, this.headers)
             .toPromise()
             .then(responce => responce.json())
             .catch(this.handleError);

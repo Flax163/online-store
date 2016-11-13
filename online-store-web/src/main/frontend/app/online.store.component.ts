@@ -18,8 +18,9 @@ export class OnlineStoreComponent implements OnInit {
     ngOnInit():void {
         let token:string = this.cookieService.get('token');
         if (!isNullOrUndefined(token)) {
-            this.authorizationService.verifyToken(new TokenDto(token))
+            this.authorizationService.authorizationByToken(new TokenDto(token))
                 .then(() => {
+                    console.log(token);
                     this.metadata.authorization(token);
                 })
                 .catch(() => {
