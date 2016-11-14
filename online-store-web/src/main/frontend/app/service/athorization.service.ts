@@ -25,7 +25,7 @@ export class AuthorizationService extends BaseServiceJson {
     authorizationByToken(tokenDto:TokenDto):Promise<TokenDto> {
         return this.http.post(this.AUTHORIZATION_BY_TOKEN_URL, tokenDto, this.headers)
             .toPromise()
-            .then(responce => responce.json())
+            .then()
             .catch(this.handleError);
     }
 }

@@ -29,6 +29,6 @@ public class AuthorizationFacade
     public Response authorizationByToken(@Nonnull final TokenDto token)
     {
         boolean userExist = authorizationService.existToken(token.getToken());
-        return userExist ? Response.status(400).build() : Response.status(401).build();
+        return userExist ? Response.ok().build() : Response.status(401).build();
     }
 }
