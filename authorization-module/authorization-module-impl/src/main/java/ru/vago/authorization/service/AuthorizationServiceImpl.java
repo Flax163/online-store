@@ -1,4 +1,4 @@
-package ru.vago.authorization;
+package ru.vago.authorization.service;
 
 import ru.vago.authorization.entity.User;
 import ru.vago.authorization.service.AuthorizationService;
