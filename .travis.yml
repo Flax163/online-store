@@ -16,3 +16,4 @@ cache:
     - $HOME/.gradle/wrapper/
     - $HOME/online-store-web/node-v5.8.0-darwin-x64
     - $HOME/online-store-web/node_modules
+    - node_modules
