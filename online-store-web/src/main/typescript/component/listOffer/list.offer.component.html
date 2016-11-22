@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4" *ngFor='let offer of offers'>
+        <div class="thumbnail">
+            <h3 align="center">{{offer.name}}</h3>
+            <div class="caption">
+                <p>{{offer.description}}</p>
+            </div>
+            <img src="{{offer.pathImage}}" alt="...">
+        </div>
+    </div>
+</div>

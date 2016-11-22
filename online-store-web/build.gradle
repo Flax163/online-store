@@ -39,16 +39,12 @@ node {
 
     download = true
 
-    workDir = file("${project.projectDir}/src/main/frontend")
-    nodeModulesDir = file("${project.projectDir}/src/main/frontend")
+    workDir = file("${project.projectDir}")
+    nodeModulesDir = file("${project.projectDir}")
 }
 
-gulp {
-    workDir = file("${project.projectDir}/src/main/frontend")
-}
-
-task gulpBuild(type: GulpTask) {
-    args = ["build"]
+task npmBuild(type: NpmTask) {
+    args = ['run-script', 'build']
 }
 
 task buildFrontEnd(dependsOn: 'npmInstall') {
@@ -58,6 +54,6 @@ task buildFrontEnd(dependsOn: 'npmInstall') {
     }
 
     doLast {
-        gulpBuild.execute()
+        npmBuild.execute()
     }
 }
